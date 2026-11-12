@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>澳洲九日初遇 · 墨尔本 × 十二门徒 × 悉尼 行程助手</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Safe structural utilities using injected host tokens */
+    html, body {
+      scroll-behavior: smooth;
+    }
+    .glass-nav {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .tab-btn {
+      transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
+    }
+    .tab-btn:active {
+      transform: scale(0.98);
+    }
+    .card-hover {
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-1px);
+    }
+    .fade-in {
+      animation: fadeIn 0.22s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .accent-tint-primary {
+      background-color: color-mix(in srgb, var(--primary) 12%, transparent);
+    }
+    .accent-tint-success {
+      background-color: color-mix(in srgb, var(--success) 13%, transparent);
+    }
+    .accent-tint-warning {
+      background-color: color-mix(in srgb, var(--warning) 14%, transparent);
+    }
+    .accent-tint-error {
+      background-color: color-mix(in srgb, var(--error) 13%, transparent);
+    }
+    .accent-tint-chart1 {
+      background-color: color-mix(in srgb, var(--chart-1) 14%, transparent);
+    }
+    .accent-tint-chart2 {
+      background-color: color-mix(in srgb, var(--chart-2) 14%, transparent);
+    }
+    .accent-tint-chart3 {
+      background-color: color-mix(in srgb, var(--chart-3) 14%, transparent);
+    }
+    .accent-tint-chart4 {
+      background-color: color-mix(in srgb, var(--chart-4) 14%, transparent);
+    }
+    .surface-subtle {
+      background-color: color-mix(in srgb, var(--foreground) 4%, var(--card));
+    }
+    .nav-bg {
+      background-color: color-mix(in srgb, var(--background) 88%, transparent);
+    }
+    .progress-bar-fill {
+      transition: width 0.3s ease;
+    }
+  </style>
+  <script>
+    // Provide clean standalone fallback tokens ONLY when opened outside Jetski host
+    (function ensureStandaloneTokens() {
+      document.addEventListener('DOMContentLoaded', function () {
+        var root = document.documentElement;
+        var bg = getComputedStyle(root).getPropertyValue('--background').trim();
+        if (!bg) {
+          var fallbacks = {
+            '--background': '#f8f7f4',
+            '--content': '#ffffff',
+            '--card': '#ffffff',
+            '--sidebar': '#f2f0eb',
+            '--border': '#e4e0d8',
+            '--card-border': '#e8e4dc',
+            '--foreground': '#1f2328',
+            '--muted-foreground': '#5f6770',
+            '--placeholder': '#8b949e',
+            '--code-foreground': '#24292f',
+            '--primary': '#0f766e',
+            '--primary-foreground': '#ffffff',
+            '--secondary': '#ebe8e1',
+            '--secondary-foreground': '#1f2328',
+            '--accent': '#e6f4f1',
+            '--link': '#0f766e',
+            '--success': '#15803d',
+            '--warning': '#b45309',
+            '--error': '#b91c1c',
+            '--chart-1': '#0f766e',
+            '--chart-2': '#c2410c',
+            '--chart-3': '#1d4ed8',
+            '--chart-4': '#7c3aed',
+            '--chart-5': '#be185d',
+            '--chart-6': '#0369a1'
+          };
+          Object.keys(fallbacks).forEach(function (k) {
+            root.style.setProperty(k, fallbacks[k]);
+          });
+        }
+      });
+    })();
+  </script>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased min-h-screen">
+  <!-- Top Sticky Header -->
+  <header class="sticky top-0 z-30 border-b border-[var(--border)] nav-bg glass-nav">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap items-center justify-between gap-3 py-3.5">
+        <div class="flex items-center gap-3 min-w-0">
+          <div class="w-10 h-10 rounded-xl accent-tint-primary flex items-center justify-center text-[var(--primary)] shrink-0 border border-[var(--card-border)]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <h1 class="text-base sm:text-lg font-semibold tracking-tight truncate">澳洲九日初遇 · 墨尔本 × 十二门徒 × 悉尼</h1>
+            <p class="text-xs text-[var(--muted-foreground)] truncate">2027.09.10 – 09.19 · 重庆/上海出发深圳会合 · 仅换1次酒店的闺蜜轻松游</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2.5 shrink-0">
+          <button onclick="switchTab('checklist')" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--card)] border border-[var(--border)] text-xs font-medium hover:border-[var(--primary)] transition-colors cursor-pointer">
+            <span class="w-2 h-2 rounded-full bg-[var(--success)]"></span>
+            <span>行前进度</span>
+            <span id="header-checklist-count" class="font-mono font-semibold text-[var(--primary)]">0/18</span>
+          </button>
+          <button onclick="openSummaryModal()" class="px-3 py-1.5 rounded-full bg-[var(--primary)] text-[var(--primary-foreground)] text-xs font-medium hover:opacity-90 transition-opacity cursor-pointer">
+            分享/导出摘要
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav id="main-nav" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-2.5 -mx-1 px-1" aria-label="主导航">
+        <!-- Rendered by JS -->
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="app-content" class="max-w-5xl mx-auto px-4 sm:px-6 py-6 pb-16">
+    <!-- Dynamic Tab Views Rendered Here -->
+  </main>
+
+  <!-- Export Summary Modal -->
+  <div id="summary-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" style="background-color: rgba(0,0,0,0.45);">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-xl">
+      <div class="flex items-center justify-between px-5 py-4 border-b border-[var(--card-border)]">
+        <div>
+          <h3 class="font-semibold text-base">行程速览文本（可直接复制发微信给旅伴）</h3>
+          <p class="text-xs text-[var(--muted-foreground)] mt-0.5">已同步你当前的 Day 7 方案选择、备忘录与想吃清单</p>
+        </div>
+        <button onclick="closeSummaryModal()" class="p-1.5 rounded-lg hover:bg-[var(--secondary)] text-[var(--muted-foreground)] cursor-pointer" aria-label="关闭">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-5 overflow-y-auto flex-1">
+        <textarea id="summary-textarea" readonly class="w-full h-72 p-3.5 rounded-xl surface-subtle border border-[var(--card-border)] text-xs font-mono leading-relaxed text-[var(--foreground)] focus:outline-none"></textarea>
+      </div>
+      <div class="flex items-center justify-between px-5 py-3.5 border-t border-[var(--card-border)]">
+        <span id="copy-feedback" class="text-xs text-[var(--success)] font-medium opacity-0 transition-opacity">已复制到剪贴板！</span>
+        <div class="flex gap-2">
+          <button onclick="closeSummaryModal()" class="px-4 py-2 rounded-lg bg-[var(--secondary)] text-[var(--secondary-foreground)] text-xs font-medium cursor-pointer">关闭</button>
+          <button onclick="copySummaryText()" class="px-4 py-2 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] text-xs font-medium cursor-pointer">一键复制全文</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // Persistent State (Safe localStorage wrapper with in-memory fallback)
+    // =========================================================================
+    var STORAGE_KEY = 'au_trip_2027_state_v1';
+    var memoryStore = {};
+
+    function loadState() {
+      var defaults = {
+        activeTab: 'overview',
+        selectedDay: 1,
+        dayFilter: 'all',
+        day7Mode: 'planA', // 'planA' (Taronga Zoo + The Rocks) | 'planB' (Blue Mountains Tour)
+        hotelCity: 'melbourne',
+        musicalCity: 'all',
+        foodSubTab: 'food',
+        doneSpots: {},
+        checkedPrep: {},
+        wishlistFood: {},
+        shoppingChecked: {},
+        selectedHotelNote: { melbourne: '', sydney: '' },
+        dayNotes: {},
+        customPrepItems: []
+      };
+      try {
+        var raw = window.localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          return Object.assign({}, defaults, JSON.parse(raw));
+        }
+      } catch (e) {
+        if (memoryStore[STORAGE_KEY]) {
+          return Object.assign({}, defaults, memoryStore[STORAGE_KEY]);
+        }
+      }
+      return defaults;
+    }
+
+    var state = loadState();
+
+    function saveState() {
+      try {
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        memoryStore[STORAGE_KEY] = JSON.parse(JSON.stringify(state));
+      }
+      updateHeaderProgress();
+    }
+
+    // =========================================================================
+    // Comprehensive Curated Travel Data (Grounded for Sep 10-19, 2027)
+    // =========================================================================
+    var NAV_TABS = [
+      { id: 'overview', label: '总览与航班', icon: 'map' },
+      { id: 'itinerary', label: '每日详细行程', icon: 'calendar' },
+      { id: 'hotels', label: '住宿区域推荐', icon: 'hotel' },
+      { id: 'musicals', label: '2027音乐剧指南', icon: 'ticket' },
+      { id: 'foodshop', label: '美食 · 购物 · 退税', icon: 'bag' },
+      { id: 'safety', label: '女生安全与贴士', icon: 'shield' },
+      { id: 'checklist', label: '行前准备清单', icon: 'check' }
+    ];
+
+    var DAYS_DATA = [
+      {
+        day: 0,
+        date: '9月10日 (周五)',
+        city: '出发 · 深圳会合',
+        cityKey: 'transit',
+        title: '两地飞深圳 T3 会合 · 夜航直飞悉尼',
+        wakeTime: '各自白天从重庆 / 上海出发',
+        pace: '轻松赶机日',
+        sunset: '夜间飞行中',
+        hotel: '飞机上过夜（南航 CZ3071）',
+        summary: '两位女生分别从重庆江北 T3、上海浦东 T2 出发，下午在深圳宝安 T3 汇合吃晚饭，18:55 一起搭乘南航 CZ3071 飞往悉尼！',
+        safetyNote: '飞机上建议穿宽松舒适衣物+带颈枕、眼罩、保湿面膜和薄外套；提前在机上填好澳洲《入境旅客登记卡》(IPC)。',
+        spots: [
+          {
+            id: 'd0-s1',
+            time: '11:45 / 13:30',
+            name: '国内段出发 → 深圳宝安 T3 汇合',
+            tag: '交通',
+            booking: '已出票',
+            bookingLevel: 'done',
+            intro: '重庆出发 CZ3466（11:45–13:55，中转 5h，行李直挂）；上海出发 CZ6752（13:30–16:15，中转 2h40m）。两人同飞国际段 CZ3071。',
+            why: '在深圳机场有充足时间汇合、过国际边检、逛免税店并吃一顿热乎的中餐，开启愉快假期。',
+            how: '确认值机时行李是否直接挂到 Sydney (SYD)；抵达深圳 T3 后跟着「国际中转」标识走，在国际出发区汇合。',
+            reserve: '建议提前在南航 App 选好两人相邻座位（CZ3071 为 A330 宽体机，2-4-2 布局，选靠窗两人座最舒服！）。',
+            tips: '国际段 18:55 起飞，记得带空保温杯过安检后接热水；务必检查随身包里没有任何肉干、坚果、水果等澳洲违禁零食。'
+          }
+        ]
+      },
+      {
+        day: 1,
+        date: '9月11日 (周六)',
+        city: '悉尼转机 → 墨尔本',
+        cityKey: 'melbourne',
+        title: '落地直飞墨尔本 · 换酒店最少神操作 · 雅拉河初体验',
+        wakeTime: '06:25 落地悉尼',
+        pace: '前半天转机 · 下午超轻松散步',
+        sunset: '18:08 (墨尔本)',
+        hotel: '墨尔本酒店 第1/3晚（CBD 核心区）',
+        summary: '落地悉尼后直接转国内段飞墨尔本，完美避开清晨落地无法办理入住的尴尬，而且全程只换 1 次酒店！下午入住补觉洗漱后，轻松打卡墨尔本最经典的弗林德斯街与涂鸦街。',
+        safetyNote: '墨尔本市中心主干道（Flinders St、Collins St、Southbank 河滨）晚上非常明亮热闹；涂鸦街 Hosier Lane 天黑后不要逗留太晚。',
+        spots: [
+          {
+            id: 'd1-s1',
+            time: '06:25 – 12:30',
+            name: '悉尼 T1 入境清关 → 乘国内段直飞墨尔本 (MEL)',
+            tag: '核心交通',
+            booking: '需提前订国内机票',
+            bookingLevel: 'required',
+            intro: 'CZ3071 于 06:25 抵达悉尼 T1 国际航站楼。必须在悉尼完成澳洲入境、提取托运行李并过检疫申报，再前往 T2/T3 国内航站楼飞往墨尔本（飞行仅 1.5 小时）。',
+            why: '这样安排的最大好处：全程只需住 2 家酒店（墨尔本 3 晚 + 悉尼 5 晚），彻底避免「悉尼→墨尔本→悉尼」换两次酒店折腾行李，且落地墨尔本正好接近 14:00 酒店入住时间！',
+            how: '在 SYD T1 拿完行李后，乘坐 Airport Link 火车（1 站即达 Domestic 站，约 2 分钟，约 AUD $9+）或 Qantas 免费中转巴士（若买澳航联程/国内段）前往 T2/T3。建议预订 10:30–11:00 左右起飞的 Qantas (T3) 或 Virgin Australia (T2) 航班，留足 4 小时最稳妥！',
+            reserve: '强烈建议提前 2–3 个月购买 Qantas 或 Virgin Australia（含行李额且准点率高，尽量避开易延误且行李严苛的 Jetstar）。',
+            tips: '澳洲检疫极严！任何食品/中药/茶叶/木制品都要在入境卡勾选 YES 申报；走 SmartGate 自助通关（中国电子护照通常可用）非常快。落地墨尔本机场 (MEL) 后坐 SkyBus 直达 Southern Cross 站（约 25–30 分钟）或直接 Uber 到酒店（两人平摊约 AUD $55-70，拖箱子最省力）。'
+          },
+          {
+            id: 'd1-s2',
+            time: '13:30 – 15:30',
+            name: '入住墨尔本酒店 · 洗漱休整补觉',
+            tag: '休整',
+            booking: '需提前订酒店',
+            bookingLevel: 'required',
+            intro: '抵达 CBD 酒店办理入住（通常 14:00–15:00 入住，早到可先寄存行李去楼下喝杯墨尔本澳白 Flat White）。',
+            why: '经历红眼航班后好好洗个热水澡、小睡 1 小时，精神焕发再出门，完全不会累垮！',
+            how: '建议住在 Flinders St / Collins St 或 Southern Cross 附近（详见「住宿推荐」页）。',
+            reserve: '预订酒店时可备注 Early Check-in request（非保证但常有惊喜）。',
+            tips: '澳洲 9 月初春昼夜温差大，出门记得带防风外套和折叠伞（墨尔本一天四季不是开玩笑）。'
+          },
+          {
+            id: 'd1-s3',
+            time: '16:00 – 18:30',
+            name: '弗林德斯街车站 → 圣保罗座堂 → 涂鸦街 → 联邦广场',
+            tag: '地标打卡',
+            booking: '无需预约',
+            bookingLevel: 'none',
+            intro: '墨尔本最具代表性的「十字路口四件套」：复古鹅黄色的 Flinders Street Station、哥特风 St Paul\'s Cathedral、色彩炸裂的 Hosier Lane 涂鸦巷、以及现代感十足的 Federation Square。',
+            why: '全部集中在步行 5 分钟范围内，几乎零体能消耗，一秒 get 墨尔本「南半球欧洲文艺之都」的气质，拍照超级出片！',
+            how: 'CBD 免费电车区（Free Tram Zone）任意电车坐到 Flinders Street Station 下车即达。',
+            reserve: '全部免费，无需预约。圣保罗座堂内部若遇礼拜可静静参观。',
+            tips: '最佳机位：站在 Flinders St 与 Swanston St 交叉口斜对面，能把复古车站与电车同框！Hosier Lane 趁天亮 17:30 前拍完。'
+          },
+          {
+            id: 'd1-s4',
+            time: '18:30 – 20:30',
+            name: '雅拉河畔 (Southbank) 夜景漫步 + 首顿欢迎晚餐',
+            tag: '夜景美食',
+            booking: '热门餐厅建议预约',
+            bookingLevel: 'recommended',
+            intro: '从联邦广场走过 Princes Bridge 来到 Southbank 河滨步道，对岸是墨尔本灯火璀璨的天际线，河岸边全是氛围感十足的餐厅与酒吧。',
+            why: '第一晚不用跑远，吹着微凉的河风吃一顿热气腾腾的晚餐，吃完慢慢散步回酒店睡个好觉。',
+            how: '从 Flinders St 步行过桥 5 分钟即达 Southbank。',
+            reserve: '如果想去河边网红餐厅（如 Meat & Wine Co 或 Chin Chin），建议提前 1–2 周在官网/OpenTable 预约；或者直接去唐人街吃暖胃中餐/泰国菜。',
+            tips: '河边晚风比较凉，记得穿外套；21:00 前返回酒店好好休息，把红眼航班的疲惫彻底清零。'
+          }
+        ]
+      },
+      {
+        day: 2,
+        date: '9月12日 (周日)',
+        city: '墨尔本',
+        cityKey: 'melbourne',
+        title: '墨尔本文艺慢生活 · 维妈市集 × 百年拱廊 × NGV × 音乐剧之夜',
+        wakeTime: '09:30 – 10:00 睡到自然醒出门',
+        pace: '悠闲文艺日（全程电车+步行）',
+        sunset: '18:09 (墨尔本)',
+        hotel: '墨尔本酒店 第2/3晚（不换酒店）',
+        summary: '把周日留给墨尔本市区最完美！因为维多利亚女王市场周一周三休息，周日正好热闹非凡。上午逛市集喝咖啡、中午打卡「世界最美图书馆」与复古拱廊，下午去 NGV 看艺术展，晚上看一场澳洲首演音乐剧！',
+        safetyNote: '若晚上去看音乐剧，剧院区（Comedy Theatre / Arts Centre）散场时人流非常多，主干道灯火通明；散场后步行回 CBD 酒店或直接打 Uber 5 分钟即可。',
+        spots: [
+          {
+            id: 'd2-s1',
+            time: '10:00 – 12:00',
+            name: '维多利亚女王市场 (Queen Victoria Market) + 澳式 Brunch',
+            tag: '市集美食',
+            booking: '无需预约',
+            bookingLevel: 'none',
+            intro: '南半球最大的露天百年历史市场，分为生鲜熟食大厅、现开生蚝、手工饰品、羊毛制品和超火的美食餐车。',
+            why: '感受最地道的墨尔本周末烟火气！一定要买刚出炉的热腾腾果酱甜甜圈 (American Doughnut Kitchen) 和一杯 Market Lane 咖啡！',
+            how: 'CBD 坐免费电车（57/58/59/19路等）至 Queen Victoria Market 站下车即到（仍在 Free Tram Zone 边缘，注意看站牌提示）。',
+            reserve: '无需预约，周日营业时间约 09:00–16:00。',
+            tips: '想买现成澳式袋鼠小礼物/手工皂这里性价比不错，但高价 UGG 还是留到最后两天悉尼市区正规专柜买（还可退税）。部分小摊位偏好现金或加收 1–2% 刷卡手续费。'
+          },
+          {
+            id: 'd2-s2',
+            time: '12:30 – 14:00',
+            name: '维多利亚州立图书馆 (State Library) & Melbourne Central',
+            tag: '文艺地标',
+            booking: '无需预约',
+            bookingLevel: 'none',
+            intro: '拥有梦幻八角形穹顶阅览室 (La Trobe Reading Room) 的百年免费图书馆，对面就是把整座古老子弹塔包进玻璃锥体里的 Melbourne Central 商场。',
+            why: '从 6 楼俯瞰穹顶阅览室的对称美感，是墨尔本必拍的震撼机位！',
+            how: '从维妈步行约 10 分钟，或乘 Swanston St 免费电车至 Melbourne Central 站。',
+            reserve: '免费入场无需预约（10:00–18:00）。',
+            tips: '图书馆内请保持绝对安静、拍照关快门声、不要打扰自习学生！顺路可以去附近吃午餐或买 Lune 可颂（CBD 分店在 Collins St 附近）。'
+          },
+          {
+            id: 'd2-s3',
+            time: '14:30 – 17:00',
+            name: '皇家拱廊 (Royal Arcade) · 街区拱廊 (Block Arcade) · 维多利亚国家美术馆 (NGV)',
+            tag: '建筑艺术',
+            booking: '常设展免预约 / 特展需购票',
+            bookingLevel: 'none',
+            intro: '先穿过 19 世纪欧洲宫廷风的复古购物拱廊（Hopetoun Tea Rooms 橱窗超美），再过河走进澳洲历史最悠久的 NGV 国际馆（标志性的水墙入口+彩绘玻璃天花板）。',
+            why: '既能逛精致咖啡店、巧克力老店（Koko Black），又能在 NGV 免费欣赏莫奈、毕加索等世界级大师真迹，避开午后可能的小阵雨。',
+            how: '沿 Swanston St 步行逛完两个拱廊，再坐任意南行电车（1 站过河即达 Arts Precinct，注意过河出了 Free Tram Zone 需刷卡 tap on，约 AUD $5）。',
+            reserve: 'NGV 常设展完全免费免预约；若遇热门特展（如时尚/大师展）可在 ngv.vic.gov.au 提前购票。',
+            tips: 'NGV 馆内冷气较足，建议穿方便穿脱的外套；记得在彩绘玻璃大厅躺/坐着仰望天花板拍一张！'
+          },
+          {
+            id: 'd2-s4',
+            time: '19:00 / 19:30',
+            name: '【高光时刻】墨尔本音乐剧之夜（强推澳洲首演新剧！）',
+            tag: '音乐剧',
+            booking: '必须提前 3–6 个月抢票',
+            bookingLevel: 'required',
+            intro: '2027年9月墨尔本正好有两部西区/百老汇爆款大剧澳洲首演：《返老还童》(Benjamin Button, Arts Centre Playhouse，9月3日-10月2日已确定档期！) 与《肉馅行动》(Operation Mincemeat, Comedy Theatre，9月首演待放票)。',
+            why: '你已经看过魅影/汉密尔顿/悲惨世界/罗朱，这两部都是近年奥利弗/托尼奖横扫的新鲜神作，在墨尔本看澳洲首演体验拉满！',
+            how: 'Arts Centre Melbourne 就在 NGV 隔壁，步行 2 分钟！Comedy Theatre 在 CBD 东北角 Exhibition St，坐免费电车直达。',
+            reserve: '必须提前在官网购票（详见「2027音乐剧指南」标签页）。注：周日通常有下午场（约 13:00/14:00）或傍晚场（17:00/18:30），若周日无晚场，可把本场调至 Day 1 周六晚或 Day 3/4！',
+            tips: '提早 30–40 分钟到剧院打卡+买周边场刊；提前吃好晚饭（澳洲剧院周边餐厅出餐慢，预留 1.5 小时吃晚餐）。'
+          }
+        ]
+      },
+      {
+        day: 3,
+        date: '9月13日 (周一)',
+        city: '大洋路 · 十二门徒',
+        cityKey: 'gor',
+        title: '世界最美海岸公路 · 十二门徒岩精品小团一日游',
+        wakeTime: '07:00 起床 · 07:30 左右集合（唯一早起游玩日）',
+        pace: '全天精品小团（车程较长但不用操心）',
+        sunset: '18:10 (海边风大偏凉)',
+        hotel: '墨尔本酒店 第3/3晚（不换酒店）',
+        summary: '特意安排在周一而非周末！周一去大洋路车流最少、打卡点不拥挤，而且你们已经休息了两天完全倒过来了。报 12–16 人精品小团（中文或英文司机导游皆可），坐着奔驰商务车一路躺看绝美海岸线、野生考拉与震撼的十二门徒！',
+        safetyNote: '一日团通常晚上 19:30–20:30 送回墨尔本市中心集合点或酒店门口，下车就在 CBD，安全无忧。',
+        spots: [
+          {
+            id: 'd3-s1',
+            time: '07:30 – 12:30',
+            name: '大洋路沿线：小红帽灯塔 · 大洋路拱门 · 阿波罗湾 · 野生考拉林',
+            tag: '自然奇观',
+            booking: '必须提前订一日小团',
+            bookingLevel: 'required',
+            intro: '沿着悬崖蜿蜒的 Great Ocean Road 行驶：打卡童话般的 Split Point Lighthouse（小红帽灯塔）、历史纪念拱门 Memorial Arch、在 Kennett River 抬头寻找树梢上睡觉的野生考拉与彩色鹦鹉，并在海滨小镇 Apollo Bay 午餐。',
+            why: '不自驾也能完美解锁世界级景观公路！澳洲是右舵左行且大洋路弯道极多、往返开车超 9 小时，两个女生报精品小团既安全又能在车上补觉听讲解。',
+            how: '提前预订包含 CBD 酒店接送（或 St Paul\'s Cathedral / Federation Square 集合）的「12-16人精品小团」（推荐反向大洋路 Reverse Itinerary，能错开大巴团人潮！）。',
+            reserve: '建议提前 1–2 个月在 Klook / 携程 / Go West Tours / Bunyip Tours 预订，务必选小团（Small Group ≤ 24人，最好 11-16人）并确认集合点离酒店近。',
+            tips: '强烈建议带上晕车药（山路盘旋）、防风冲锋衣/厚围巾（海边妖风吹到怀疑人生！）、墨镜和充电宝。'
+          },
+          {
+            id: 'd3-s2',
+            time: '13:30 – 16:30',
+            name: '十二门徒岩 (Twelve Apostles) & 洛克阿德大峡谷 (Loch Ard Gorge)',
+            tag: '必去高光',
+            booking: '景点免费（直升机需另购）',
+            bookingLevel: 'recommended',
+            intro: '矗立在南大洋惊涛骇浪中的巨型石灰岩海蚀柱群，以及峭壁环抱、海水呈宝石蓝色的洛克阿德大峡谷。',
+            why: '人生必看自然奇观之一！因为海浪持续侵蚀，十二门徒数量越来越少，亲眼站在观景台感受南极吹来的海风与惊涛拍岸，震撼度 100%！',
+            how: '小团直达景区停车场，步行木栈道即可到达各个观景台。',
+            reserve: '景区免票；如果预算允许，强烈推荐现场或提前加购【十二门徒直升机 15 分钟体验】（约 AUD $175/人），上帝视角俯瞰海岸线绝了！',
+            tips: '海边风极大，女生一定要把头发扎起来或戴稳的帽子（别戴容易被吹飞的宽檐草帽），拍照注意护好手机！走下 Gibson Steps（若当日开放）可近距离仰望悬崖。'
+          },
+          {
+            id: 'd3-s3',
+            time: '19:30 – 20:30',
+            name: '返回墨尔本 CBD · 轻松晚餐',
+            tag: '返程',
+            booking: '无需预约',
+            bookingLevel: 'none',
+            intro: '司机会走内陆高速直接返回墨尔本市区（比沿海线快很多），傍晚回到酒店附近随便吃碗热汤面或拉面。',
+            why: '坐车一整天后，一碗热乎乎的拉面/麻辣烫/意面就是最棒的治愈。',
+            how: '跟车回到 CBD 下车点，步行或免费电车回酒店。',
+            reserve: '无需预约，可提前收拾好行李箱准备明天退房飞悉尼。',
+            tips: '如果选的是「日落大洋路团」则会更晚（约 21:30-22:00 回市区），带好保暖衣物即可。'
+          }
+        ]
+      },
+      {
+        day: 4,
+        date: '9月14日 (周二)',
+        city: '墨尔本 → 悉尼',
+        cityKey: 'melbourne',
+        title: '彩色彩虹小屋 or 复古菲茨罗伊 · 午后从容飞悉尼（唯一换酒店日）',
+        wakeTime: '09:30 起床退房 · 寄存行李',
+        pace: '上午慢逛 · 下午飞悉尼',
+        sunset: '17:45 (悉尼)',
+        hotel: '悉尼酒店 第1/5晚（连住5晚不挪窝！）',
+        summary: '睡醒退房后把大箱子寄存在墨尔本酒店前台，上午轻装打卡彩色网红海滩小屋（Brighton）或文艺咖啡街区（Fitzroy）。下午坐 16:30–17:00 左右的航班飞悉尼，晚餐时间入住悉尼市中心酒店，接下来连住 5 晚彻底解放行李！',
+        safetyNote: '悉尼机场 (SYD) 坐 Airport Link 火车仅 15 分钟直达 Town Hall / Circular Quay，或两人直接打 Uber 约 AUD $45–60 到酒店门口，傍晚抵达天刚暗，非常安全方便。',
+        optionalAltNote: '💡 彩蛋备选：如果你特别想去【普芬比利蒸汽小火车 + 企鹅岛看小企鹅归巢】，可以把墨尔本多住 1 晚（改成 4 晚墨尔本 + 4 晚悉尼），把今天全天用来报蒸汽小火车+企鹅岛一日团，Day 5 上午再飞悉尼！',
+        spots: [
+          {
+            id: 'd4-s1',
+            time: '10:00 – 13:30',
+            name: '布莱顿彩虹小屋 (Brighton Bathing Boxes) 或 Fitzroy 咖啡买手店漫步（二选一）',
+            tag: '网红打卡',
+            booking: '无需预约',
+            bookingLevel: 'none',
+            intro: '【海滩出片派】去 Brighton Beach 看一排 80 多座色彩缤纷的百年木头更衣室，蓝天碧海配彩房子超级少女心！\n【咖啡逛街派】去 Fitzroy (Gertrude St / Brunswick St) 打卡冠军咖啡 Proud Mary、网红甜品 Lune 总部和复古小众买手店。',
+            why: '两个地方都只需半天，轻松不赶，能把墨尔本的另一面（海滨清新 vs 独立潮流）补齐。',
+            how: '去 Brighton：在 Flinders St 站坐 Sandringham 线火车约 25 分钟到 Brighton Beach 站，步行 5 分钟即达（直接刷 Apple Pay/Visa）。去 Fitzroy：坐 86 路或 11 路电车约 15 分钟。',
+            reserve: '免费免预约。去 Lune Fitzroy 总部建议早一点或选 CBD 店避免排长队。',
+            tips: 'Brighton 拍照最好上午顺光；最火的是澳洲国旗那间小屋，稍微错开一点也有超多好看颜色！记得算好时间 14:00 回到酒店取行李。'
+          },
+          {
+            id: 'd4-s2',
+            time: '14:30 – 19:00',
+            name: '返回酒店取行李 → 前往机场飞往悉尼 (MEL → SYD)',
+            tag: '城际飞行',
+            booking: '需提前订国内机票',
+            bookingLevel: 'required',
+            intro: '14:30 左右从 CBD 出发去墨尔本机场（SkyBus 或 Uber 约 30–40 分钟），搭乘 16:30–17:30 左右的航班飞往悉尼（航程 1.5 小时）。',
+            why: '选下午航班既不影响白天睡觉和玩乐，到悉尼刚好晚上 7 点左右办好入住吃晚饭，一点不浪费白天宝贵的观光时间。',
+            how: '推荐 Qantas 或 Virgin Australia（航司班次密得像公交车，每半小时就有一班）。抵达悉尼 T2/T3 后，两人拖行李建议直接打 Uber 去酒店（和 2 张机场线火车票价格几乎持平，还不用搬箱子上下楼梯！）。',
+            reserve: '与 Day 1 的 SYD→MEL 一起提前预订往返/多程机票。',
+            tips: '⚠️ 省钱干货：悉尼机场火车站有高额 Airport Access Fee（单人单程约 AUD $20+），2 个人坐火车要 AUD $40+，而打 Uber 去 Town Hall/CBD 也就 AUD $45–55！2 个女生带行李箱强烈建议直接 Uber 门到门！'
+          },
+          {
+            id: 'd4-s3',
+            time: '19:30 – 21:00',
+            name: '入住悉尼酒店（连住5晚！）· 附近觅食初印象',
+            tag: '入住休整',
+            booking: '需提前订酒店',
+            bookingLevel: 'required',
+            intro: '办理入住后在酒店周边（Town Hall / Darling Harbour / Chinatown 一带）吃一顿轻松晚餐，顺便逛逛 Coles 或 Woolworths 澳洲超市买酸奶、车厘子/草莓和矿泉水！',
+            why: '接下来 5 晚都住在这里，可以把化妆品和衣服彻底摊开整理好，享受真正的度假感。',
+            how: '步行即可。',
+            reserve: '无需预约。',
+            tips: '澳洲超市营业通常到晚上 22:00（部分到 00:00），非常适合买早餐牛奶、Tim Tam 和平价水果！'
+          }
+        ]
+      },
+      {
+        day: 5,
+        date: '9月15日 (周三)',
+        city: '悉尼',
+        cityKey: 'sydney',
+        title: '悉尼海港明信片日 · 歌剧院深度游 × 皇家植物园 × 歌剧院音乐剧',
+        wakeTime: '09:30 – 10:00 睡饱出门',
+        pace: '经典高光日（全程海港步行+渡轮）',
+        sunset: '17:46 (悉尼)',
+        hotel: '悉尼酒店 第2/5晚',
+        summary: '第一次来悉尼最不能错过的灵魂一天！从悉尼歌剧院内部导览开始，漫步海港皇家植物园到麦考利夫人座椅拍明信片全景，傍晚在歌剧院海边小酌看绝美日落，晚上走进歌剧院或 Capitol 剧院看一场重磅音乐剧！',
+        safetyNote: '环形码头 (Circular Quay) 和歌剧院周边是悉尼安保最好的顶级旅游区，晚上散场人潮熙攘；看完剧坐轻轨 L2/L3 或 Uber 10 分钟即可回到 Town Hall 酒店。',
+        spots: [
+          {
+            id: 'd5-s1',
+            time: '10:00 – 12:00',
+            name: '悉尼歌剧院 (Sydney Opera House) 内部中文导览 + 外景打卡',
+            tag: '世界遗产',
+            booking: '强烈建议提前预约中文团',
+            bookingLevel: 'required',
+            intro: '不仅是外观像白帆的建筑奇迹，走进内部（音乐厅、琼·萨瑟兰剧院）听建筑师乌松的传奇故事与声学奥秘，还有普通游客进不去的观景角度。',
+            why: '来悉尼不止在外面拍照！1 小时的官方中文导览讲解生动有趣，还能近距离触摸瓷砖贝壳结构，物超所值。',
+            how: '从 Town Hall 乘轻轨 L2/L3 或火车 T8/T2/T3 至 Circular Quay 站，沿东侧海港步道走 6 分钟即达。',
+            reserve: '务必提前 2–4 周在 sydneyoperahouse.com 或 Klook 预订「中文官方导览 Tour」（约 1 小时，场次有限易满）。',
+            tips: '穿平底好走鞋（导览要走不少台阶）；如果当天晚上本来就要在歌剧院看《悲惨世界》，白天做完导览会更有沉浸感！拍照机位：歌剧院大台阶、Bennelong 门口、海港对岸渡轮上。'
+          },
+          {
+            id: 'd5-s2',
+            time: '12:30 – 15:30',
+            name: '皇家植物园 (Royal Botanic Garden) → 麦考利夫人座椅 (Mrs Macquarie\'s Chair)',
+            tag: '绝美海港',
+            booking: '无需预约',
+            bookingLevel: 'none',
+            intro: '紧挨歌剧院的超大临海免费公园，沿着海湾水边一直走到半岛尽头的砂岩长椅，能把「悉尼歌剧院 + 悉尼海港大桥」以最完美的角度同框收入镜头！',
+            why: '所有悉尼旅游封面大片几乎都诞生在这里！9 月早春园内鲜花初绽、海风柔和，走起来非常惬意。',
+            how: '从歌剧院旁直接步入皇家植物园，沿 Farm Cove 海边平路漫步约 25–30 分钟抵达麦考利夫人座椅。',
+            reserve: '免费免预约（植物园每日 07:00 至日落开放）。',
+            tips: '注意防晒！草地上有很多不怕人的白色大凤头鹦鹉和朱鹭（别喂食，保护好手里的小零食）。中途可以在 Botanic House 喝咖啡吃轻食。'
+          },
+          {
+            id: 'd5-s3',
+            time: '16:00 – 18:15',
+            name: 'Opera Bar 海港日落小酌 OR 环形码头渡轮看夕阳',
+            tag: '氛围感拉满',
+            booking: '无需预约（早去占露天座）',
+            bookingLevel: 'none',
+            intro: '回到歌剧院脚下的 Opera Bar，点一杯起泡酒/无酒精 mocktail 和一份炸鱿鱼/生蚝，面对海港大桥与渡轮来往，看着天空从金黄变成粉紫色。',
+            why: '被誉为「全世界风景最好的露天酒吧」，姐妹俩在这里吹海风聊天拍照，幸福感直接拉满！',
+            how: '就在悉尼歌剧院底层海港步道边。',
+            reserve: '露天座先到先得，16:30 左右去刚好能抢到临海好位置（9 月日落约 17:46）。',
+            tips: '小心抢食的海鸥！食物不要离开视线（服务员也会贴心提醒）。如果想吃正式晚餐，旁边有 Aria / Bennelong（需提前数月预订）或 Circular Quay 商圈餐厅。'
+          },
+          {
+            id: 'd5-s4',
+            time: '19:00 / 19:30',
+            name: '【高光时刻】悉尼音乐剧之夜：《帕丁顿熊》首演 or 歌剧院版《悲惨世界》',
+            tag: '音乐剧',
+            booking: '必须提前抢票',
+            bookingLevel: 'required',
+            intro: '两个顶级选择任选其一（甚至一周看两场！）：\n① Capitol Theatre【《帕丁顿熊音乐剧》Paddington The Musical】澳洲首演，悉尼是全球第 3 个上演城市，新鲜暖心！\n② 悉尼歌剧院【《悲惨世界》40周年全本】虽然你看过悲惨世界，但在世界文化遗产悉尼歌剧院里看 40 周年纪念全本，仪式感无可替代！',
+            why: '把观剧安排在周三晚，避开周末高票价与拥挤，体验世界一流剧院水准！',
+            how: '歌剧院在 Circular Quay 步行即达；Capitol Theatre 在 Haymarket (13 Campbell St)，从 Town Hall 步行 10 分钟或坐轻轨 2 站到 Capitol Square 站。',
+            reserve: '务必提前数月在官网/Ticketmaster 购票或加入 Waitlist（详见「2027音乐剧指南」页）。',
+            tips: '穿着 Smart Casual（好看连衣裙/风衣）非常出片；演出一般 2.5 小时含中场休息，22:00 前后散场。'
+          }
+        ]
+      },
+      {
+        day: 6,
+        date: '9月16日 (周四)',
+        city: '悉尼',
+        cityKey: 'sydney',
+        title: '南太平洋绝美海岸徒步 · 邦迪海滩 × 网红冰山泳池 × 周四深夜购物预热',
+        wakeTime: '09:30 – 10:00 睡饱出门',
+        pace: '阳光海滩 + 艺术人文',
+        sunset: '17:47 (悉尼)',
+        hotel: '悉尼酒店 第3/5晚',
+        summary: '感受悉尼最迷人的阳光海滩生活方式！上午去邦迪海滩吃网红澳式早午餐，沿着绝美的「邦迪至布朗特」悬崖海岸步道慢走拍照，下午逛免费的新州美术馆与圣玛丽大教堂，晚上正好碰上【悉尼周四深夜购物日】（商场开到 21:00）！',
+        safetyNote: '邦迪海滩与市中心都非常安全；周四晚因为是 Late Night Shopping，Pitt St / QVB 一带晚上 9 点依然灯火通明、人来人往。',
+        spots: [
+          {
+            id: 'd6-s1',
+            time: '10:00 – 13:30',
+            name: '邦迪海滩 (Bondi Beach) · 冰山泳池 (Icebergs Pool) · 悬崖海岸步道 (Bondi → Bronte 段)',
+            tag: '海滩徒步',
+            booking: '无需预约',
+            bookingLevel: 'none',
+            intro: '澳洲最负盛名的海滩，标志性的悬崖海浪无边泳池 Bondi Icebergs Club 就在南端悬崖边。沿着绝美海岸步道走到 Bronte Beach（精华段约 2.5km，边走边拍 1–1.5 小时即可，完全不累！）。',
+            why: '一边是碧蓝翻涌的太平洋与冲浪人群，一边是金色砂岩悬崖，9 月幸运的话还能在海面上看到迁徙路过的座头鲸喷水！',
+            how: '从 Town Hall / Martin Place 坐火车 T4 线到 Bondi Junction 站（约 12 分钟），出站无缝换乘 333 路公交车直达 Bondi Beach（约 15 分钟），全程刷 Apple Pay/Visa 即可。',
+            reserve: '免费免预约。如果想进 Icebergs 泳池拍照/游泳，门口买单次门票（约 AUD $10）即可；楼上 Icebergs Dining Room 餐厅需提前预约。',
+            tips: '走完 Bondi → Bronte 就可在 Bronte 坐 379 公交回 Bondi Junction 换火车回市区（不用硬走完到 Coogee 的全程 6km，轻松最重要！）。务必涂高倍 SPF50+ 防晒霜+戴墨镜！'
+          },
+          {
+            id: 'd6-s2',
+            time: '14:30 – 17:00',
+            name: '新南威尔士州立美术馆 (Art Gallery of NSW) → 圣玛丽大教堂 → 海德公园',
+            tag: '艺术人文',
+            booking: '无需预约（常设展免费）',
+            bookingLevel: 'none',
+            intro: '回到市中心，先参观融合古典建筑与全新玻璃展馆 (Naala Badu) 的新州美术馆，接着步行穿过树荫大道来到哥特式双塔圣玛丽大教堂 (St Mary\'s Cathedral) 和海德公园喷泉。',
+            why: '上午看海下午看艺术，一动一静节奏超舒服；圣玛丽大教堂和海德公园的无花果林荫道拍照极具电影感！',
+            how: '从 Bondi Junction 坐 T4 火车回到 Martin Place 或 St James 站，步行 8 分钟到美术馆。',
+            reserve: '全部免费免预约（美术馆开放至 17:00，周三通常开到 22:00）。',
+            tips: '进入教堂请衣着得体（避免过度暴露）并保持安静；美术馆地下层的油罐展厅 (The Tank) 非常有特色别错过！'
+          },
+          {
+            id: 'd6-s3',
+            time: '17:30 – 20:30',
+            name: 'Barangaroo / 达令港海滨晚餐 + 周四悉尼深夜购物彩蛋',
+            tag: '美食购物',
+            booking: '热门餐厅建议预约',
+            bookingLevel: 'recommended',
+            intro: '今天是周四！悉尼市中心商场（QVB、Westfield、David Jones、Myer）平日 18:00 就关门，唯有【周四营业到 21:00】！可以先去时尚海滨区 Barangaroo 或达令港吃晚餐看夜景，顺路开启第一波买买买预热！',
+            why: '巧妙利用周四深夜营业日，提前试码、比价，周六最后一天扫货就能快准狠不手忙脚乱！',
+            how: '从海德公园步行至 QVB/Pitt St 仅 5 分钟；步行至 Barangaroo / 达令港约 12 分钟。',
+            reserve: '推荐在达令港吃 Hurricane\'s Grill 碳烤猪肋排，或在 Barangaroo 吃精致海滨澳餐（提前在官网预约）。',
+            tips: '记得澳洲商家周四晚营业至 21:00，但药房 Chemist Warehouse 平时就开到较晚（通常 20:00–21:00）。'
+          }
+        ]
+      },
+      {
+        day: 7,
+        date: '9月17日 (周五)',
+        city: '悉尼',
+        cityKey: 'sydney',
+        title: '考拉袋鼠萌宠日 · 双方案自由切换（轻松动物园 vs 蓝山一日团）',
+        wakeTime: '方案A: 09:30出门 | 方案B: 08:00集合',
+        pace: '可自由切换：超轻松海港渡轮 OR 经典蓝山自然团',
+        sunset: '17:48 (悉尼)',
+        hotel: '悉尼酒店 第4/5晚',
+        summary: '来澳洲一定要看考拉和袋鼠！今天特意为你们设计了两个方案：点击下方切换按钮，可以在【方案 A：坐渡轮去最美海景塔龙加动物园 + 岩石区 + 天文台山日落（不赶早、超轻松！）】和【方案 B：蓝山三姐妹峰 + 野生动物园一日小团】之间一键切换！',
+        safetyNote: '天文台山 (Observatory Hill) 日落时有很多情侣和游客非常浪漫安全，但天完全黑透后建议顺着大路走到 The Rocks / Circular Quay 坐车回酒店，不要在暗处逗留。',
+        hasPlanToggle: true,
+        planA: {
+          label: '方案 A（首推 · 轻松睡饱版）',
+          subtitle: '9:30 出门 · 渡轮塔龙加动物园 + 岩石区 + 海港大桥 + 天文台山绝美日落',
+          spots: [
+            {
+              id: 'd7-a1',
+              time: '09:45 – 13:30',
+              name: '乘海港渡轮 → 塔龙加动物园 (Taronga Zoo)',
+              tag: '必看考拉袋鼠',
+              booking: '建议提前网上买门票',
+              bookingLevel: 'recommended',
+              intro: '坐落在悉尼港北岸山坡上的传奇动物园，被誉为「全世界风景最好的动物园」——长颈鹿展区的背景竟然是整个悉尼歌剧院和天际线！能近距离看到考拉、袋鼠、鸭嘴兽、针鼹等澳洲特有萌物。',
+              why: '不用坐 2 小时大巴出城也能轻松实现「看考拉袋鼠」心愿！顺便免费解锁最美的悉尼港 F2 渡轮巡游！',
+              how: '在 Circular Quay 4 号码头乘 F2 渡轮直达 Taronga Zoo 码头（仅 12 分钟，刷 Apple Pay/Visa），下船可乘门口接驳巴士上山顶入口，一路顺着下坡逛下来超省腿！',
+              reserve: '提前在官网或 Klook 购买电子票通常比现场便宜（约 AUD $47）；若想拍「考拉近距离合影 Koala Encounter」需提前在官网单独加购预约！',
+              tips: '⚠️ 小技巧：澳洲新南威尔士州法律规定【不允许游客直接抱考拉】（只有昆士兰等少数州允许），但可以在 Taronga Zoo / Wild Life Zoo 付费站在考拉树枝旁近距离合影！记得先去山顶再往下走，完全不爬坡！'
+            },
+            {
+              id: 'd7-a2',
+              time: '14:00 – 16:45',
+              name: '新悉尼鱼市场 (New Sydney Fish Market) 午餐 OR 岩石区 (The Rocks) 漫步 + 海港大桥步道',
+              tag: '美食地标',
+              booking: '无需预约',
+              bookingLevel: 'none',
+              intro: '回到环形码头后有两个超赞选择：坐轻轨 L1 去 2026 年全新开幕的波浪屋顶【新悉尼鱼市场】狂炫现开生蚝、海胆和龙虾；或者直接漫步悉尼历史发源地【岩石区 The Rocks】，走上海港大桥免费人行步道（也可登塔 Pylon Lookout）。',
+              why: '新鱼市场环境比旧市场干净现代无数倍，海鲜控必冲；而海港大桥人行道能近距离俯视歌剧院白帆，免费又壮观！',
+              how: '去新鱼市场：在 Central/Capitol Square/Darling Harbour 乘 L1 轻轨至 Fish Market / Wentworth Park 站。去岩石区：Circular Quay 西侧步行 3 分钟即达。',
+              reserve: '鱼市场及大桥步道均免预约；若想体验专业【攀爬悉尼海港大桥 BridgeClimb】（刺激但价格较高约 AUD $300+），需提前 1 个月预约。',
+              tips: '新鱼市场生鲜建议 15:00 前去最全；岩石区有很多可爱小店、百年老酒馆和 La Renaissance 法式甜品店！'
+            },
+            {
+              id: 'd7-a3',
+              time: '17:00 – 18:15',
+              name: '天文台山公园 (Observatory Hill Park) 绝美海港大桥日落',
+              tag: '浪漫日落',
+              booking: '无需预约',
+              bookingLevel: 'none',
+              intro: '悉尼本地人最爱的秘密野餐草坡，180 度无遮挡正对悉尼海港大桥与西侧海湾，一棵巨型百年无花果树和复古凉亭超级浪漫！',
+              why: '两个女生带块小毯子或两杯热咖啡坐在草坡上看夕阳给海港大桥镀上金边，是悉尼最治愈、最电影感的瞬间！',
+              how: '从岩石区步行上坡约 10 分钟，或从 Wynyard 站步行 8 分钟即达。',
+              reserve: '完全免费，无需预约。',
+              tips: '9 月日落约 17:48，建议 17:00 前到达占个好草坪角度；山顶风微凉记得穿外套。日落后步行下山去 Barangaroo 或 The Rocks 吃晚餐！'
+            }
+          ]
+        },
+        planB: {
+          label: '方案 B（自然奇观 · 一日小团版）',
+          subtitle: '08:00 出发 · 蓝山三姐妹峰 + 三种缆车 + Featherdale 野生动物园喂袋鼠',
+          spots: [
+            {
+              id: 'd7-b1',
+              time: '08:00 – 18:00',
+              name: '蓝山国家公园 (Blue Mountains) + Featherdale 野生动物园精品小团',
+              tag: '世界遗产小团',
+              booking: '必须提前订一日小团',
+              bookingLevel: 'required',
+              intro: '上午先去 Featherdale 野生动物园亲手喂散养的小袋鼠、近距离看考拉和袋熊；中午进入世界自然遗产蓝山，打卡回音谷三姐妹峰 (Three Sisters)，体验 Scenic World 全球最陡峭的矿井森林小火车、高空透明底缆车和索道！',
+              why: '如果喜欢壮丽山谷森林、想亲手喂袋鼠且不介意再早起一天，蓝山是悉尼周边最经典的 1 日游路线。',
+              how: '预订含 CBD 集合/接送的精品小团（许多团返程还会安排坐 Parramatta 河渡轮直接滑回悉尼歌剧院，避开晚高峰堵车超赞！）。',
+              reserve: '建议提前 1–2 个月在 Klook / 携程 / Andersons Tours 预订含 Scenic World 门票的小团。',
+              tips: '蓝山海拔约 1000 米，比悉尼市区冷 5–7°C，务必多穿一件保暖卫衣或防风外套！若遇大雾天气山谷能见度会降低，但也有仙气。'
+            }
+          ]
+        }
+      },
+      {
+        day: 8,
+        date: '9月18日 (周六)',
+        city: '悉尼 · 购物收官日',
+        cityKey: 'sydney',
+        title: '霍格沃茨悉尼大学 × 周末限定市集 × 终极扫货与退税整理',
+        wakeTime: '09:30 – 10:00 睡饱出门',
+        pace: '拍照 + 逛市集 + 沉浸式购物（完美收官）',
+        sunset: '17:48 (悉尼)',
+        hotel: '悉尼酒店 第5/5晚（整理行李+退税发票）',
+        summary: '把最后一天完整留给悉尼拍照和疯狂买买买！周六恰好有超好逛的【岩石区周末市集】，上午先去「澳洲最美霍格沃茨」悉尼大学拍大片，中午去吃网红西瓜蛋糕，下午直奔 QVB、Pitt St 步行街、David Jones 和 Chemist Warehouse 一站式扫货并整理 TRS 退税！',
+        safetyNote: '周六市中心与达令港最热闹；大包小包买完先提回就在旁边的 Town Hall 酒店放好，晚上轻装去吃告别大餐（注意明天一早 06:30 出发去机场，今晚 22:00 前把退税 App 二维码和行李全收拾妥当！）。',
+        spots: [
+          {
+            id: 'd8-s1',
+            time: '09:45 – 11:30',
+            name: '悉尼大学 (University of Sydney) 主楼 Quadrangle 哈利波特楼',
+            tag: '打卡大片',
+            booking: '无需预约',
+            bookingLevel: 'none',
+            intro: '建于 1850 年的澳洲最古老大学，砂岩哥特式主楼 (Quadrangle) 简直是霍格沃茨魔法学院本院，四方草坪与拱廊怎么拍都是学院风大片。',
+            why: '几乎零难度出片！顺便可以步行 10 分钟去隔壁文艺街区 Newtown 吃一口全澳洲最火的【Black Star Pastry 草莓西瓜蛋糕】！',
+            how: '从 Town Hall / Central 乘巴士（422/423/426/428 等，约 12 分钟）直达 University of Sydney Main Gate，或两人打 Uber 仅约 AUD $15–20。',
+            reserve: '校园免费免预约。',
+            tips: '周六校园安静好拍；请尊重校园环境不要进入教学办公区。9 月中旬蓝花楹尚未盛开（花期在 10 月底–11 月），但砂岩建筑配蓝天草坪本身已经绝美！'
+          },
+          {
+            id: 'd8-s2',
+            time: '12:00 – 14:00',
+            name: '岩石区周末市集 (The Rocks Markets) OR 帕丁顿市集 (Paddington Markets)',
+            tag: '周六限定',
+            booking: '无需预约',
+            bookingLevel: 'none',
+            intro: '仅在周六、周日才有的悉尼顶级手作市集！200 多个白色帐篷沿着历史石板街排开，集合了澳洲本土设计师饰品、香薰蜡烛、手绘明信片、纯羊毛制品与街头美食。',
+            why: '能买到商场里绝对买不到的独特小众伴手礼，氛围感超级松弛！',
+            how: '从悉尼大学/Newtown 坐火车回 Circular Quay（约 15 分钟）直达 The Rocks Markets。',
+            reserve: '免费免预约（10:00–17:00）。',
+            tips: '如果当天想买高颜值的手信送朋友（澳洲本土蜂蜜、手工香薰、原创插画），这里超好挑！'
+          },
+          {
+            id: 'd8-s3',
+            time: '14:30 – 18:00',
+            name: '悉尼核心商圈终极扫货：QVB → Pitt Street Mall → Westfield → Chemist Warehouse',
+            tag: '购物扫货',
+            booking: '注意 18:00 多数百货关门',
+            bookingLevel: 'none',
+            intro: '一条龙全部连在一起走完：\n• QVB 维多利亚女王大厦（本身就是美到窒息的百年拜占庭宫殿！楼上有 Haigh\'s 巧克力、Pandora、轻奢与茶室）\n• Pitt Street Mall & Westfield（Aesop、Jurlique、UGG、Lululemon、Zara、Sephora、Luxury 大牌）\n• David Jones / Myer（澳洲顶级百货，美妆香氛凑 AUD $300 退税超容易！）\n• Chemist Warehouse（澳洲国民药房：木瓜膏、Swisse、Blackmores、绵羊油、Eaoron 等一站式扫齐！）',
+            why: '最后一天集中采购，不用拎着战利品在两个城市来回拖箱子，而且紧挨酒店随时能把东西放回房间再继续逛！',
+            how: '全部位于 Town Hall 站方圆 300 米内，步行无缝穿梭！',
+            reserve: '无需预约，⚠️ 重点提醒：周六大多数百货/专卖店【17:30–18:00 就关门】！务必 14:30 前开始买大件，18:00 后再去开得比较晚的 Chemist Warehouse 和 Coles 超市买伴手礼/零食！',
+            tips: '🔥 退税必看：同一家店（同 ABN 税号）累计满 AUD $300 即可退税约 9.09%！记得一定要向店员索要【纸质完整 Tax Invoice 原件】！单张超 $1000 须写护照姓名！'
+          },
+          {
+            id: 'd8-s4',
+            time: '18:30 – 21:00',
+            name: '悉尼告别晚餐 + 酒店打包行李 & 填写 My TRS Claim 退税 App',
+            tag: '收官整理',
+            booking: '建议预约心仪告别餐厅',
+            bookingLevel: 'recommended',
+            intro: '去达令港/环形码头/市中心吃一顿丰盛的澳洲和牛牛排或海鲜告别大餐（如果周六达令港有烟花表演还能顺便看烟花！）。回酒店称重行李、把需要退税的商品分类装好。',
+            why: '把所有退税申报提前在手机「My TRS Claim」App 填好生成二维码，明天早上机场直接走快速通道少排 40 分钟队！',
+            how: '就近选择餐厅，吃完步行回酒店打包。',
+            reserve: '牛排馆推荐 Rockpool Bar & Grill / Black Bar & Grill / The Meat & Wine Co。',
+            tips: '⚠️ 退税打包铁律：要退税的【液体/护肤品/保健品/超100ml香水】必须托运，明早要先在机场【值机前】给海关柜台查验盖章再托运；【包包/首饰/手表/墨镜】则放随身登机包，过了安检再退税！务必确认两个行李箱不超重（南航经济舱一般 23kg×1 或 ×2，请核对各自机票行李额！）。'
+          }
+        ]
+      },
+      {
+        day: 9,
+        date: '9月19日 (周日)',
+        city: '悉尼 → 广州 → 重庆/上海',
+        cityKey: 'transit',
+        title: '早起退税值机 · 满载而归返程日',
+        wakeTime: '06:00 起床 · 06:30 退房出发',
+        pace: '留足退税时间 · 丝滑回国',
+        sunset: '18:10 落地广州白云 T2',
+        hotel: '温暖的家',
+        summary: '早上 10:05 南航 CZ326 起飞！因为你们有购物退税需求，建议 06:30 就从酒店打 Uber 出发，07:00 抵达悉尼 T1 国际航站楼，从容搞定盖章、值机、安检、TRS 退税与最后逛机场免税店！18:10 同抵广州白云 T2，再各自转机回重庆（20:20）和上海（20:00）。',
+        safetyNote: '周日清晨交通极顺畅，提前一晚用 Uber 预约次日 06:30 专车，两位女生带着满满战利品门到门直达 T1 出发层最省力！',
+        spots: [
+          {
+            id: 'd9-s1',
+            time: '06:30 – 10:05',
+            name: '悉尼 T1 机场退税 (TRS) + 登机 CZ326 回国',
+            tag: '返程退税',
+            booking: '提前填好 My TRS Claim App',
+            bookingLevel: 'required',
+            intro: '07:00 到 T1 后流程：① 如有托运退税物品，先去 Arrivals 到达层（或指定 ABF Client Services 柜台）给海关看实物+发票盖章；② 回出发层办南航托运值机（确认行李直挂重庆/上海）；③ 过海关出境与安检；④ 过安检后立即去 Heinemann 免税店入口右侧的【TRS 退税柜台】扫 App 二维码领退税（退回信用卡）；⑤ 安心候机！',
+            why: '早班机时段悉尼机场 TRS 排队非常容易爆满，提前 3 小时到达才能保证不误机还能稳稳拿到退税！',
+            how: '酒店门口 Uber 直达 Sydney Airport T1 International Departures（周日早约 20 分钟，车费约 AUD $45-55）。',
+            reserve: '提前 24 小时在南航 App 值机选座。',
+            tips: '抵达广州白云 T2 (18:10) 后，上海航班 CZ3595 是 20:00 起飞（中转 1h50m 稍微紧凑），重庆航班 CZ3439 是 20:20 起飞（中转 2h10m），下飞机后跟着「国际转国内」通道快步走，时间完全来得及！'
+          }
+        ]
+      }
+    ];
+
+    var HOTEL_AREAS = {
+      melbourne: [
+        {
+          rank: '首推 No.1 · 综合王者',
+          name: 'Flinders Street Station / Collins Street 东段（CBD 核心区）',
+          stations: 'Flinders Street 火车站 · Swanston St / Collins St 免费电车站',
+          priceRange: '约 ¥1,100 – ¥2,000 / 晚（双人间）',
+          safetyScore: '9.5 / 10（主街明亮热闹）',
+          whyGirls: '全在【免费电车区 (Free Tram Zone)】内！出门步行 5 分钟可达联邦广场、涂鸦街、皇家拱廊、唐人街和主要音乐剧院；大洋路一日团几乎 100% 都在这里的 St Paul\'s Cathedral 或附近酒店门口接送，早上不用摸黑赶车！',
+          landmarks: '推荐锁定：Collins St、Bourke St、Russell St、Flinders Ln 一带（如 Rendezvous、W Melbourne、Grand Hyatt、QT、Novotel on Collins、Holiday Inn Express Little Collins 等周边）。',
+          pros: ['免费电车坐遍市区', '大洋路小团接送最方便', '夜晚餐厅多、街道亮堂安全', '看音乐剧步行可达'],
+          cons: ['热门旺季价格略高，需提前 2–4 个月预订'],
+          avoidTip: '尽量避开 King St 酒吧街紧邻路段（周末深夜较吵）以及 Flagstaff Gardens 公园北侧偏僻街道。'
+        },
+        {
+          rank: '备选 No.2 · 拖行李最省力',
+          name: 'Southern Cross Station 东侧（Spencer St 靠近 Collins / Bourke St）',
+          stations: 'Southern Cross 交通枢纽（SkyBus 机场快线终点站）',
+          priceRange: '约 ¥900 – ¥1,600 / 晚（双人间）',
+          safetyScore: '8.8 / 10（选 Spencer St 东侧）',
+          whyGirls: '墨尔本机场 SkyBus 直达这里！下大巴拖着行李 3 分钟进酒店，完全不走冤枉路，而且依然在 Free Tram Zone 里，酒店普遍较新、房间更大、性价比更高。',
+          landmarks: '推荐锁定：Spencer St 东侧（靠近 Collins St、Bourke St 方向，如 Ritz-Carlton、Movenpick、Holiday Inn Express Southbank/Little Collins、Oakwood 等）。',
+          pros: ['机场往返零换乘', '酒店更新、性价比高', '有大型 Coles 超市和奥莱 DFO'],
+          cons: ['步行到联邦广场/剧院区需要 15 分钟（但坐免费电车 5 分钟就到）'],
+          avoidTip: '⚠️ 注意选车站【东侧往市区方向】，不要选 Docklands 最西边海港尽头（晚上风大且空旷寂静，两个女生夜归会觉得有点荒凉）。'
+        },
+        {
+          rank: '备选 No.3 · 河景文艺氛围',
+          name: 'Southbank 河滨区（靠近 Arts Centre / Princes Bridge）',
+          stations: 'Flinders Street 过桥步行 5–8 分钟',
+          priceRange: '约 ¥1,100 – ¥1,900 / 晚（双人间）',
+          safetyScore: '9.2 / 10（高端河滨社区）',
+          whyGirls: '紧邻 NGV 美术馆和 Arts Centre 剧院（看《返老还童》散步 3 分钟回酒店！），房间常带落地窗俯瞰雅拉河和 CBD 夜景，干净安静又有高级感。',
+          landmarks: 'Southbank Promenade、City Road 北侧（靠近 Crown 东侧而非酒吧深处）。',
+          pros: ['河景夜景绝美', '去 NGV 和 Arts Centre 零距离', '环境整洁安静'],
+          cons: ['过河后出了 Free Tram Zone 边界，坐电车需刷卡（但走过桥就是免费区）'],
+          avoidTip: '不要住得离桥太远（超过 15 分钟步行会略显麻烦）。'
+        }
+      ],
+      sydney: [
+        {
+          rank: '首推 No.1 · 购物观光机场全能王',
+          name: 'Town Hall Station / QVB / Hyde Park 西侧（George St & Pitt St 核心）',
+          stations: 'Town Hall 火车站 & 轻轨 L2/L3 · Gadigal 地铁站',
+          priceRange: '约 ¥1,300 – ¥2,200 / 晚（双人间）',
+          safetyScore: '9.6 / 10（悉尼最繁华明亮的主干道）',
+          whyGirls: '对你们这趟行程简直是天选之地！① 最后 1–2 天买买买（QVB、Pitt St、Westfield、David Jones、Chemist Warehouse）全在楼下 3 分钟步程，买重了随时拿回房间放！② 看 Capitol Theatre《帕丁顿熊》步行 10 分钟，坐轻轨去歌剧院 8 分钟；③ 步行 8 分钟到达令港；④ 机场快线直达/Uber 20 分钟到机场！',
+          landmarks: '推荐锁定：George St、Pitt St、Kent St、Castlereagh St、Market St 周边（如 Hilton、Swissôtel、QT Sydney、Sheraton Grand Hyde Park、Meriton Suites World Tower/Kent St、Fraser Suites 等）。',
+          pros: ['最后两天购物无敌方便', '超市药房中餐咖啡全在楼下', '新开通的悉尼地铁 Gadigal 站也在旁边', '街道宽敞人多，夜归极有安全感'],
+          cons: ['热门地段需早订；注意避开太临街低楼层以防轻轨声音'],
+          avoidTip: '非常稳妥的区域！唯一注意：晚上回酒店沿 George St / Pitt St 主街走，不要大半夜横穿黑漆漆的 Hyde Park 公园内部。'
+        },
+        {
+          rank: '备选 No.2 · 推窗见歌剧院顶级体验',
+          name: 'Circular Quay / The Rocks（环形码头 · 岩石区）',
+          stations: 'Circular Quay 火车/轻轨/渡轮总站 · Barangaroo 地铁站',
+          priceRange: '约 ¥1,800 – ¥3,500+ / 晚（双人间）',
+          safetyScore: '9.8 / 10（顶级景区安保）',
+          whyGirls: '如果预算充足，住在这里每天出门就能看到悉尼歌剧院和海港大桥！去塔龙加动物园坐渡轮、去歌剧院看《悲惨世界》、逛周六岩石区市集全是下楼即达！',
+          landmarks: 'Four Seasons、InterContinental、Sydney Harbour Marriott、Pullman Quay Grand、Rendezvous The Rocks 等。',
+          pros: ['风景无敌，度假仪式感天花板', '渡轮总站就在门口', '歌剧院看完音乐剧散步 5 分钟回房'],
+          cons: ['房价明显高于 Town Hall；最后一天购物需坐 2 站轻轨或走 15 分钟去 Pitt St'],
+          avoidTip: '岩石区部分老建筑道路有坡度和石板路，拖大箱子建议直接 Uber 送到酒店大堂门口。'
+        },
+        {
+          rank: '备选 No.3 · 性价比 + 中餐亚洲胃友好',
+          name: 'Darling Harbour 东侧 / World Square（靠近 Town Hall 与 Chinatown）',
+          stations: 'Town Hall 站 / Museum 站 / Capitol Square 轻轨站',
+          priceRange: '约 ¥1,100 – ¥1,700 / 晚（双人间）',
+          safetyScore: '9.0 / 10（热闹便利）',
+          whyGirls: '位置紧贴 Town Hall 南侧，步行 5 分钟就是 Capitol Theatre 和达令港，楼下无数正宗川菜、粤菜、日料、奶茶和亚超，如果几天西餐吃腻了，住这片简直幸福感爆棚！',
+          landmarks: 'World Square 周边、Sussex St、Liverpool St、Darling Square 新区（如 Rydges World Square、Sofitel Darling Harbour、Crowne Plaza Darling Harbour、Novotel Darling Square 等）。',
+          pros: ['美食选择极丰富，夜宵方便', '距离 Capitol Theatre 超近', '套房公寓选择多（带洗衣机厨房！）'],
+          cons: ['往返歌剧院需坐 10 分钟轻轨'],
+          avoidTip: '⚠️ 尽量选 Town Hall / World Square / Darling Square 这边，不要住到 Central Station 南边/西边的小巷子，也绝对避开 Kings Cross 红灯区旧址。'
+        }
+      ]
+    };
+
+    var MUSICALS_DATA = [
+      {
+        id: 'm-paddington',
+        city: '悉尼 Sydney',
+        cityKey: 'sydney',
+        title: 'Paddington The Musical',
+        cnTitle: '《帕丁顿熊音乐剧》',
+        badge: '澳洲首演 · 全球第3城',
+        badgeType: 'hot',
+        seenBefore: false,
+        venue: 'Capitol Theatre（悉尼首都剧院，Haymarket）',
+        dates: '2027年9月盛大开演（10周限定档期）',
+        fitTrip: '完美契合你们 9月15日–18日 在悉尼的行程！',
+        whyWatch: '伦敦西区横扫好评的全新热门音乐剧，悉尼是继伦敦之后全球第 3 座上演的城市！温暖治愈、舞台机关奇幻精致，而且你肯定还没看过，绝对是 2027 年 9 月悉尼最重磅的新剧！',
+        ticketStatus: '目前官方 Waitlist（优先购票候补名单）已开放！',
+        whereToBuy: 'paddingtonthemusical.com.au / capitoltheatre.com.au / Ticketmaster AU',
+        action: '建议【现在就去官网填邮箱加入 Waitlist】，一开票立刻抢 Stalls 前中排或 Dress Circle 第 1–3 排！'
+      },
+      {
+        id: 'm-benjamin',
+        city: '墨尔本 Melbourne',
+        cityKey: 'melbourne',
+        title: 'The Curious Case of Benjamin Button',
+        cnTitle: '《本杰明·巴顿奇事（返老还童）》',
+        badge: '奥利弗奖得主 · 档期已实锤',
+        badgeType: 'hot',
+        seenBefore: false,
+        venue: 'Arts Centre Melbourne — Playhouse（南岸艺术中心）',
+        dates: '2027年9月3日 – 10月2日（精准覆盖！）',
+        fitTrip: '精准命中你们 9月11日–14日 在墨尔本的每一天！',
+        whyWatch: '伦敦西区口碑炸裂、斩获奥利弗大奖的民谣风音乐剧首次来澳！由才华横溢的演员们在舞台上亲自演奏十几种乐器（Actor-Musician），关于爱与时间的奇迹，好哭又动人！',
+        ticketStatus: '已官宣精确日期，可密切关注 Arts Centre Melbourne 开票通知。',
+        whereToBuy: 'artscentremelbourne.com.au',
+        action: '墨尔本档期最稳的必看新剧！开票后优先选 Stalls 中间区域，小剧场视听体验无敌。'
+      },
+      {
+        id: 'm-mincemeat',
+        city: '墨尔本 Melbourne',
+        cityKey: 'melbourne',
+        title: 'Operation Mincemeat',
+        cnTitle: '《肉馅行动》',
+        badge: '奥利弗+托尼双料神剧 · 澳洲首演',
+        badgeType: 'hot',
+        seenBefore: false,
+        venue: 'Comedy Theatre（墨尔本喜剧剧院，CBD）',
+        dates: '2027年9月起开演（具体首演日待官宣）',
+        fitTrip: '需核对具体开演日期是否赶上 9月11日–13日！',
+        whyWatch: '近年伦敦西区与百老汇现象级爆款喜剧音乐剧！仅靠 5 位演员疯魔分饰 90 个角色，讲述二战史上最离谱却真实发生的英国情报大戏——节奏快得像《汉密尔顿》，笑到拍大腿又有一首封神催泪曲！喜欢《汉密尔顿》的你绝对会爱死这部！',
+        ticketStatus: '澳洲官网 & Marriner Group 优先候补名单已开，具体 9 月哪天首演待公布。',
+        whereToBuy: 'marrinergroup.com.au / Ticketek',
+        action: '立刻加入 Marriner Group Waitlist！如果首演在 9 月 13 日前，闭眼冲这一部！'
+      },
+      {
+        id: 'm-lesmis',
+        city: '悉尼 Sydney',
+        cityKey: 'sydney',
+        title: 'Les Misérables (40th Anniversary)',
+        cnTitle: '《悲惨世界》澳洲40周年纪念全本',
+        badge: '悉尼歌剧院驻演 · 史诗仪式感',
+        badgeType: 'classic',
+        seenBefore: true,
+        venue: 'Sydney Opera House — Joan Sutherland Theatre',
+        dates: '2027年8月27日 – 10月10日（已开售/持续放票！）',
+        fitTrip: '完美覆盖你们 9月15日–18日 悉尼行程（含多场晚场/日场）！',
+        whyWatch: '虽然你已经看过《悲惨世界》，但这是卡梅隆·麦金托什为纪念该剧登陆澳洲 40 周年打造的【全本舞台制作】，而且演出地点就是世界地标【悉尼歌剧院】！在白帆之下听《One Day More》响彻剧场，是此生难忘的朝圣时刻！',
+        ticketStatus: '已正式排期并陆续在 Sydney Opera House 官网与 Ticketmaster 放票！',
+        whereToBuy: 'sydneyoperahouse.com / ticketmaster.com.au',
+        action: '作为悉尼歌剧院核心大戏非常抢手，若想刷二刷/圆梦歌剧院看大戏，可以早早盯票！'
+      },
+      {
+        id: 'm-pharlap',
+        city: '墨尔本 Melbourne',
+        cityKey: 'melbourne',
+        title: 'Phar Lap: The Electro-Swing Musical',
+        cnTitle: '《法尔拉普：电音摇摆音乐剧》',
+        badge: '澳洲本土原创 · 小众惊喜',
+        badgeType: 'indie',
+        seenBefore: false,
+        venue: 'Southbank Theatre（墨尔本剧院公司 MTC）',
+        dates: '2027年9月9日开演',
+        fitTrip: '精准覆盖你们 9月11日–14日 墨尔本行程！',
+        whyWatch: '以澳洲国民传奇赛马 Phar Lap 为题材的电音摇摆（Electro-Swing）风格原创音乐剧，极具澳洲本土文化特色，风格明快热烈。',
+        ticketStatus: 'MTC 2027 演出季已发布。',
+        whereToBuy: 'mtc.com.au',
+        action: '若想体验一部只有澳洲才看得到的原创酷剧，可作为墨尔本备选！'
+      },
+      {
+        id: 'm-bemorechill',
+        city: '悉尼 Sydney',
+        cityKey: 'sydney',
+        title: 'Be More Chill',
+        cnTitle: '《冷静一点 / Be More Chill》',
+        badge: '外百老汇人气小剧场',
+        badgeType: 'indie',
+        seenBefore: false,
+        venue: 'Hayes Theatre Co（悉尼精品音乐剧小剧场，Potts Point）',
+        dates: '2027年9月14日 – 10月17日',
+        fitTrip: '完美覆盖 9月15日–18日 悉尼行程！',
+        whyWatch: 'Hayes Theatre 是悉尼音乐剧迷心中的宝藏圣地（仅约 110 座，离演员近到能看清睫毛！）。《Be More Chill》是红遍全球的青春科幻摇滚音乐剧，氛围嗨翻天。',
+        ticketStatus: 'Hayes Theatre 2027 剧季已公布。',
+        whereToBuy: 'hayestheatre.com.au',
+        action: '超级音乐剧发烧友强推加场体验！'
+      },
+      {
+        id: 'm-lionking',
+        city: '墨尔本 Melbourne',
+        cityKey: 'melbourne',
+        title: 'Disney\'s The Lion King',
+        cnTitle: '《狮子王》迪士尼经典',
+        badge: '视听天花板 · 关注是否延演至9月',
+        badgeType: 'classic',
+        seenBefore: false,
+        venue: 'Regent Theatre（墨尔本丽晶剧院）',
+        dates: '2027年3月25日开演（目前已开票至 6月，爆款常延演！）',
+        fitTrip: '视 2027 年初是否加场延演至 9 月而定',
+        whyWatch: '你没看过《狮子王》的话强烈值得关注！开场《Circle of Life》万兽奔腾从观众席走过直接起鸡皮疙瘩，Regent Theatre 更是富丽堂皇像欧洲宫殿。',
+        ticketStatus: '目前已放票至 2027 年 6 月，通常热门迪士尼大剧会视票房继续延档至 9 月。',
+        whereToBuy: 'thelionkingmusical.com.au / marrinergroup.com.au',
+        action: '2027 年初再看一次是否延演到 9 月！'
+      }
+    ];
+
+    var FOOD_DATA = [
+      { id: 'f1', city: '墨尔本', cat: '咖啡 Brunch', name: 'Lune Croissanterie', area: 'CBD (Russell St) / Fitzroy', dish: '世界最强可颂 · 杏仁可颂、传统牛角、每日限定口味', tip: 'CBD 分店排队通常比 Fitzroy 总店快，建议上午去不然招牌会售罄。' },
+      { id: 'f2', city: '墨尔本', cat: '咖啡 Brunch', name: 'Higher Ground / Hardware Société', area: 'CBD 核心区', dish: '百年发电厂改造的高挑空间 Brunch · 班尼迪克蛋、龙虾布里欧修、瑞可塔松饼', tip: '周末人气极高，9:30 出门刚好错开最早一波，Higher Ground 环境超级出片！' },
+      { id: 'f3', city: '墨尔本', cat: '咖啡', name: 'Patricia Coffee Brewers / Proud Mary', area: 'CBD / Collingwood', dish: '站着喝的冠军澳白 (Flat White)、手冲单品咖啡', tip: '墨尔本咖啡文化天花板！Patricia 是只做黑/白/手冲的立饮宝藏小店（周末注意看营业时间，Patricia 仅周一至五开！周末改去 Market Lane / Dukes）。' },
+      { id: 'f4', city: '墨尔本', cat: '市集小吃', name: 'American Doughnut Kitchen (维妈)', area: 'Queen Victoria Market', dish: '70 年老字号现炸热果酱甜甜圈（5 个一袋）+ 现开塔斯马尼亚生蚝', tip: 'Day 2 周日逛维妈必吃！热乎乎咬一口超满足。' },
+      { id: 'f5', city: '墨尔本', cat: '正餐', name: 'Tipo 00 / Chin Chin', area: 'CBD (Little Bourke / Flinders Ln)', dish: '墨尔本神级手工意大利面（黑松露/墨鱼汁意面）/ 网红东南亚菜', tip: 'Tipo 00 务必提前 2–3 周官网预约！Chin Chin 可用官网在线候位，口味偏重酸辣超符合中国胃。' },
+      { id: 'f6', city: '悉尼', cat: '海鲜盛宴', name: 'New Sydney Fish Market（新悉尼鱼市场）', area: 'Blackwattle Bay (Glebe/Pyrmont)', dish: '2026年全新落成波浪地标！现开悉尼岩蚝、海胆、刺身拼盘、芝士焗龙虾', tip: '建议中午至 15:00 前去，临海露天座位注意防海鸥抢食物！' },
+      { id: 'f7', city: '悉尼', cat: '网红甜品', name: 'Black Star Pastry', area: 'Newtown / CBD (Galeries 就在 QVB 对面！)', dish: '全澳最出名的【草莓西瓜蛋糕 Strawberry Watermelon Cake】', tip: '玫瑰奶油+清脆西瓜+开心果，一点不腻！逛 QVB 时顺路在 The Galeries 就能买到，不用专门跑远。' },
+      { id: 'f8', city: '悉尼', cat: '咖啡 Brunch', name: 'Bills (Darlinghurst / Bondi)', area: 'Bondi / Surry Hills', dish: '「世界最好吃早餐」瑞可塔松饼 (Ricotta Hotcakes) + 招牌炒蛋', tip: 'Day 6 去 Bondi 海滩时就能吃 Bills Bondi 分店，松饼绵密到像云朵！' },
+      { id: 'f9', city: '悉尼', cat: '氛围海港', name: 'Opera Bar / Hurricane\'s Grill', area: 'Circular Quay / Darling Harbour', dish: '海港日落小酌海鲜拼盘 / 比脸还大的碳烤猪肋排', tip: 'Hurricane\'s 猪肋排分量极大，两个女生点 Half Rack（半份）+ 沙拉/薯条完全够吃！' },
+      { id: 'f10', city: '悉尼', cat: '冰淇淋 & 亚洲胃', name: 'Gelato Messina / Spice Alley', area: 'Circular Quay / Chippendale / 唐人街', dish: '澳洲国民神级手工意式冰淇淋 / 东南亚夜市美食巷 & 唐人街火锅川菜', tip: 'Messina 每天有超绝限定口味（推荐开心果、海盐焦糖），Circular Quay 就有一家！想念热汤米饭随时去 Town Hall 旁的唐人街/World Square！' }
+    ];
+
+    var SHOPPING_ITEMS = [
+      { id: 'sh1', cat: '护肤美妆香氛', name: 'Aesop（伊索）', detail: '澳洲本土贵妇护肤，价格比国内划算太多！热门：赋活芳香护手霜、香芹籽精华、B三倍C。QVB、Pitt St 均有旗舰店，轻松凑满 $300 退税！' },
+      { id: 'sh2', cat: '护肤美妆香氛', name: 'Jurlique（茱莉蔻）', detail: '南澳阿德莱德有机品牌，玫瑰衡肤花卉水、护手霜套装送长辈和闺蜜超体面，Myer / David Jones 专柜常有礼盒装。' },
+      { id: 'sh3', cat: '药房国民好物', name: 'Chemist Warehouse 必扫清单', detail: 'Lucas 番木瓜膏（润唇万能膏，送人必备）、Swisse 护肝片/钙片/胶原蛋白、Blackmores 鱼油/月见草、Goat 山羊皂、Ego QV 润肤霜、绵羊油、Eaoron 面膜。单店满 $300 可开一张大发票退税！' },
+      { id: 'sh4', cat: '澳洲鞋服配饰', name: '澳洲本土 UGG / 羊绒围巾 / Lululemon', detail: '⚠️ 区分品牌：时尚款「UGG (Deckers)」在 QVB/Pitt St；澳洲本土制造「UGG Since 1974 / Jumbo UGG」可在 The Rocks 或专柜找带有绿金袋鼠三角标【Australian Made】的！另外澳洲 Lululemon 汇率+退税后常比国内便宜！' },
+      { id: 'sh5', cat: '零食巧克力伴手礼', name: 'Haigh\'s Chocolates / Tim Tam / 麦卢卡蜂蜜', detail: 'Haigh\'s 是澳洲百年手工顶级巧克力（QVB 和墨尔本 Block Arcade 都有，青蛙巧克力造型超可爱！）；超市（Coles/Woolworths）扫 Tim Tam 饼干（双层巧克力/焦糖味）、袋鼠饼干、澳洲 UMF/MGO 麦卢卡蜂蜜（注意蜂蜜属液体需托运）。' },
+      { id: 'sh6', cat: '文艺纪念品', name: 'The Rocks 市集手作 & 考拉周边', detail: '周六岩石区市集淘悉尼手绘明信片、澳洲桉树香薰、袋鼠皮小挂件或精致绒毛考拉公仔。' }
+    ];
+
+    var PREP_CHECKLIST = [
+      {
+        phase: '第 1 阶段 · 出发前 4–6 个月（2027年3月–5月）',
+        color: 'chart-1',
+        items: [
+          { id: 'p1', text: '申请澳洲旅游签证（Subclass 600）：通过 ImmiAccount 网申 + 预约录指纹，预留 1–1.5 个月出签时间', tag: '核心证件' },
+          { id: 'p2', text: '预订两段澳洲国内机票：① 9月11日 SYD→MEL（10:30–11:00 左右，留足4小时转机）；② 9月14日 MEL→SYD（16:30–17:30 左右），首选 Qantas 或 Virgin Australia', tag: '交通' },
+          { id: 'p3', text: '预订两家酒店：墨尔本 CBD（9月11日–14日，3晚）+ 悉尼 Town Hall/QVB 或环形码头（9月14日–19日，5晚），优先选可免费取消房型', tag: '住宿' },
+          { id: 'p4', text: '加入 2027 年 9 月音乐剧官网 Waitlist & 抢票：《Paddington The Musical》《Operation Mincemeat》《Benjamin Button》以及歌剧院《悲惨世界》', tag: '音乐剧' }
+        ]
+      },
+      {
+        phase: '第 2 阶段 · 出发前 1–2 个月（2027年7月–8月）',
+        color: 'chart-2',
+        items: [
+          { id: 'p5', text: '预订【大洋路+十二门徒精品小团】（9月13日 周一），确认墨尔本 CBD 集合点离酒店近', tag: '必约项目' },
+          { id: 'p6', text: '预订【悉尼歌剧院内部中文导览】（9月15日 周三上午）', tag: '必约项目' },
+          { id: 'p7', text: '预订塔龙加动物园电子票（或 Day 7 方案 B 的蓝山+野生动物园一日小团）', tag: '门票' },
+          { id: 'p8', text: '预约 1–2 家心仪网红餐厅（如 Tipo 00、Hurricane\'s Grill、告别晚餐）', tag: '美食' },
+          { id: 'p9', text: '购买境外旅游保险（覆盖医疗、航班延误、行李遗失）', tag: '安全保障' }
+        ]
+      },
+      {
+        phase: '第 3 阶段 · 出发前 1–2 周（2027年8月底–9月初）',
+        color: 'chart-3',
+        items: [
+          { id: 'p10', text: '提前买好澳洲电话卡 / eSIM（首选 Telstra 或 Optus 信号，大洋路山区 Telstra 信号最好！）', tag: '通讯' },
+          { id: 'p11', text: '每人准备 1–2 张带芯片且支持非接触感应（PayWave/PayPass）的 Visa/Mastercard 信用卡，并绑进手机 Apple Pay（悉尼墨尔本公交直接刷！）', tag: '支付' },
+          { id: 'p12', text: '兑换少量澳元现金（两人合计 AUD $150–250 足够，用于周末小摊位备用）', tag: '现金' },
+          { id: 'p13', text: '下载必备 App：Google Maps、Uber、TripView（悉尼交通）、PTV（墨尔本交通）、My TRS Claim（机场退税）、Splitwise（闺蜜AA记账）', tag: 'App' },
+          { id: 'p14', text: '打印一份酒店预订单、国内航班电子客票、签证批签信（电子版也存在手机相册离线备份）', tag: '资料备份' }
+        ]
+      },
+      {
+        phase: '第 4 阶段 · 行李打包清单（9月早春洋葱穿衣法）',
+        color: 'chart-4',
+        items: [
+          { id: 'p15', text: '衣物：防风风衣/冲锋衣（大洋路必备！）、薄针织衫/卫衣、T恤/长裙（歌剧院看剧穿）、围巾、舒适暴走运动鞋、折叠晴雨伞', tag: '穿搭' },
+          { id: 'p16', text: '防晒护眼：墨镜（海边+春阳极刺眼）、SPF50+ 高倍防晒霜（也可落地在 Chemist Warehouse 买澳洲本土防晒超便宜！）、保湿润唇膏', tag: '防晒' },
+          { id: 'p17', text: '电源电器：充电宝（必须随身带上飞机！）、国内三孔插线板（神器！澳洲插座与中国三孔八字插头完全一样，带一个三孔插线板就能解决所有两孔手机充电器！）', tag: '电器神技' },
+          { id: 'p18', text: '常备小药与入境自查：晕车药（大洋路用）、创可贴、肠胃药；⚠️ 绝对不带任何肉类零食、水果、干果、中草药，带药保留英文包装并在入境卡申报！', tag: '检疫红线' }
+        ]
+      }
+    ];
+
+    // =========================================================================
+    // Helper Icons (Pure Inline SVG — Zero external CDN dependencies)
+    // =========================================================================
+    function getIcon(name, cls) {
+      var c = cls || 'w-4 h-4';
+      var paths = {
+        map: '<polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>',
+        calendar: '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+        hotel: '<path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h.01"/><path d="M9 13h.01"/><path d="M9 17h.01"/>',
+        ticket: '<path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/>',
+        bag: '<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>',
+        shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+        check: '<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
+        plane: '<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>',
+        clock: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+        sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>',
+        alert: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>',
+        heart: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
+        pin: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>'
+      };
+      return '<svg class="' + c + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + (paths[name] || '') + '</svg>';
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function formatMultiline(str) {
+      return escapeHtml(str).replace(/\n/g, '<br/>');
+    }
+
+    // =========================================================================
+    // Navigation & Progress
+    // =========================================================================
+    function renderNav() {
+      var nav = document.getElementById('main-nav');
+      nav.innerHTML = NAV_TABS.map(function (tab) {
+        var active = state.activeTab === tab.id;
+        var cls = active
+          ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-transparent shadow-sm'
+          : 'bg-[var(--card)] text-[var(--muted-foreground)] border-[var(--border)] hover:text-[var(--foreground)] hover:border-[var(--primary)]';
+        return '<button onclick="switchTab(\'' + tab.id + '\')" class="tab-btn flex items-center gap-1.5 px-3.5 py-2 rounded-xl border text-xs font-medium whitespace-nowrap cursor-pointer ' + cls + '">' +
+          getIcon(tab.icon, 'w-3.5 h-3.5') +
+          '<span>' + tab.label + '</span>' +
+          '</button>';
+      }).join('');
+    }
+
+    function updateHeaderProgress() {
+      var total = 0;
+      var done = 0;
+      PREP_CHECKLIST.forEach(function (g) {
+        g.items.forEach(function (item) {
+          total++;
+          if (state.checkedPrep[item.id]) done++;
+        });
+      });
+      state.customPrepItems.forEach(function (item) {
+        total++;
+        if (state.checkedPrep[item.id]) done++;
+      });
+      var el = document.getElementById('header-checklist-count');
+      if (el) el.textContent = done + '/' + total;
+    }
+
+    function switchTab(tabId) {
+      state.activeTab = tabId;
+      saveState();
+      renderNav();
+      renderCurrentTab();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function jumpToDay(dayNum) {
+      state.activeTab = 'itinerary';
+      state.selectedDay = dayNum;
+      saveState();
+      renderNav();
+      renderCurrentTab();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // =========================================================================
+    // TAB 1: Overview & Flights
+    // =========================================================================
+    function renderOverview() {
+      var dayCardsHtml = DAYS_DATA.map(function (d) {
+        var cityTint = d.cityKey === 'melbourne' ? 'accent-tint-chart2 text-[var(--chart-2)]'
+          : d.cityKey === 'gor' ? 'accent-tint-chart3 text-[var(--chart-3)]'
+          : d.cityKey === 'sydney' ? 'accent-tint-primary text-[var(--primary)]'
+          : 'surface-subtle text-[var(--muted-foreground)]';
+
+        var spotsList = d.hasPlanToggle ? d[state.day7Mode].spots : d.spots;
+        var hasBooking = spotsList.some(function (s) { return s.bookingLevel === 'required'; });
+
+        return '<button onclick="jumpToDay(' + d.day + ')" class="text-left bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 card-hover hover:border-[var(--primary)] cursor-pointer flex flex-col justify-between gap-2.5">' +
+          '<div>' +
+            '<div class="flex items-center justify-between gap-2 mb-2">' +
+              '<span class="text-xs font-mono font-semibold text-[var(--muted-foreground)]">Day ' + d.day + ' · ' + escapeHtml(d.date) + '</span>' +
+              '<span class="text-[11px] font-medium px-2 py-0.5 rounded-md ' + cityTint + '">' + escapeHtml(d.city) + '</span>' +
+            '</div>' +
+            '<h4 class="font-semibold text-sm leading-snug text-[var(--foreground)]">' + escapeHtml(d.title) + '</h4>' +
+          '</div>' +
+          '<div class="flex items-center justify-between pt-2 border-t border-[var(--card-border)] text-xs text-[var(--muted-foreground)]">' +
+            '<span class="truncate">' + escapeHtml(d.wakeTime) + '</span>' +
+            (hasBooking ? '<span class="shrink-0 text-[11px] font-medium text-[var(--warning)]">需提前约</span>' : '<span class="shrink-0 text-[11px] text-[var(--primary)]">查看详情 →</span>') +
+          '</div>' +
+        '</button>';
+      }).join('');
+
+      return '<div class="space-y-6 fade-in">' +
+        // Hero Strategic Highlights
+        '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 sm:p-6">' +
+          '<div class="flex flex-wrap items-start justify-between gap-4 mb-5">' +
+            '<div>' +
+              '<h2 class="text-lg sm:text-xl font-bold tracking-tight">专为两位女生定制的「仅换 1 次酒店」顺畅双城方案</h2>' +
+              '<p class="text-xs sm:text-sm text-[var(--muted-foreground)] mt-1 leading-relaxed">完美避开澳洲 9 月下旬学校假期（VIC 9/18起、NSW 9/27起），早春气候舒爽、机酒更友好，而且 9 月正值悉尼观鲸季与多部西区大剧澳洲首演！</p>' +
+            '</div>' +
+          '</div>' +
+
+          // 4 Key Metric Tiles
+          '<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-5">' +
+            '<div class="surface-subtle border border-[var(--card-border)] rounded-xl p-3.5">' +
+              '<div class="text-xs text-[var(--muted-foreground)]">澳洲总行程</div>' +
+              '<div class="text-base font-bold mt-1">8 晚 · 2 城 + 大洋路</div>' +
+              '<div class="text-xs text-[var(--muted-foreground)] mt-0.5">9/11清晨落地 → 9/19早班回</div>' +
+            '</div>' +
+            '<div class="surface-subtle border border-[var(--card-border)] rounded-xl p-3.5">' +
+              '<div class="text-xs text-[var(--muted-foreground)]">酒店更换次数</div>' +
+              '<div class="text-base font-bold mt-1 text-[var(--success)]">全程仅换 1 次酒店！</div>' +
+              '<div class="text-xs text-[var(--muted-foreground)] mt-0.5">墨尔本 3 晚 → 悉尼连住 5 晚</div>' +
+            '</div>' +
+            '<div class="surface-subtle border border-[var(--card-border)] rounded-xl p-3.5">' +
+              '<div class="text-xs text-[var(--muted-foreground)]">每日出门节奏</div>' +
+              '<div class="text-base font-bold mt-1">09:30 – 10:00 睡饱出门</div>' +
+              '<div class="text-xs text-[var(--muted-foreground)] mt-0.5">仅大洋路团 & 返程日需早起</div>' +
+            '</div>' +
+            '<div class="surface-subtle border border-[var(--card-border)] rounded-xl p-3.5">' +
+              '<div class="text-xs text-[var(--muted-foreground)]">时差与早春气温</div>' +
+              '<div class="text-base font-bold mt-1">仅快中国 2 小时</div>' +
+              '<div class="text-xs text-[var(--muted-foreground)] mt-0.5">悉尼 11–21°C · 墨尔本 9–18°C</div>' +
+            '</div>' +
+          '</div>' +
+
+          // Visual Route Flow Diagram
+          '<div class="rounded-xl border border-[var(--card-border)] p-4 surface-subtle">' +
+            '<div class="text-xs font-semibold text-[var(--muted-foreground)] mb-3">核心动线一览（零回头路设计 · 购物全留在最后悉尼）</div>' +
+            '<div class="grid grid-cols-1 sm:grid-cols-5 gap-2.5 items-center text-xs">' +
+              '<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 text-center">' +
+                '<div class="font-semibold">9/10 深圳 T3 汇合</div>' +
+                '<div class="text-[var(--muted-foreground)] mt-0.5">重庆 & 上海 → 齐飞 CZ3071</div>' +
+              '</div>' +
+              '<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 text-center">' +
+                '<div class="font-semibold text-[var(--chart-2)]">9/11–9/14 墨尔本 (3晚)</div>' +
+                '<div class="text-[var(--muted-foreground)] mt-0.5">SYD落地直转MEL · 市区文艺+音乐剧</div>' +
+              '</div>' +
+              '<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 text-center">' +
+                '<div class="font-semibold text-[var(--chart-3)]">9/13 十二门徒 (一日团)</div>' +
+                '<div class="text-[var(--muted-foreground)] mt-0.5">周一错峰精品小团 · 往返墨尔本</div>' +
+              '</div>' +
+              '<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 text-center">' +
+                '<div class="font-semibold text-[var(--primary)]">9/14–9/19 悉尼 (5晚)</div>' +
+                '<div class="text-[var(--muted-foreground)] mt-0.5">海港歌剧院 · 邦迪 · 动物园 · 最后扫货</div>' +
+              '</div>' +
+              '<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 text-center">' +
+                '<div class="font-semibold">9/19 悉尼直返广州</div>' +
+                '<div class="text-[var(--muted-foreground)] mt-0.5">退税后飞 CZ326 → 各自回家</div>' +
+              '</div>' +
+            '</div>' +
+            '<p class="text-xs text-[var(--muted-foreground)] mt-3 leading-relaxed">💡 <strong>为什么强烈建议落地悉尼当天直接飞墨尔本？</strong> 你们 06:25 落地悉尼，酒店通常 14:00–15:00 才能入住，清晨在悉尼干等会非常疲惫。不如直接趁上午清关后花 1.5 小时飞墨尔本，抵达墨尔本正好办理入住洗漱补觉！更爽的是：这样玩完墨尔本回悉尼后可以一口气连住 5 晚直到回国，<strong>全程只换 1 次酒店</strong>，最后两天在悉尼买买买也不用拎着大包小包转城！</p>' +
+          '</div>' +
+        '</section>' +
+
+        // Two-Passenger Flight Cards (Parsed accurately from uploaded screenshots)
+        '<section class="space-y-3">' +
+          '<h3 class="text-base font-bold flex items-center gap-2">' + getIcon('plane', 'w-4 h-4 text-[var(--primary)]') + ' 已购国际往返航班核对（两人国际段同机！）</h3>' +
+          '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">' +
+            // Passenger 1: Chongqing
+            '<div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5">' +
+              '<div class="flex items-center justify-between pb-3 border-b border-[var(--card-border)]">' +
+                '<div>' +
+                  '<span class="text-xs font-semibold px-2.5 py-1 rounded-full accent-tint-chart2 text-[var(--chart-2)]">女生 A · 重庆出发</span>' +
+                '</div>' +
+                '<span class="text-xs text-[var(--muted-foreground)] font-mono">总价 ¥4,547 · 行李直达</span>' +
+              '</div>' +
+              '<div class="space-y-3.5 mt-4 text-xs">' +
+                '<div>' +
+                  '<div class="font-semibold text-[var(--primary)] mb-1.5">去程 · 2027年9月10日 (周五)</div>' +
+                  '<div class="surface-subtle rounded-lg p-3 space-y-1.5">' +
+                    '<div class="flex justify-between"><span><strong>11:45</strong> CKG 江北 T3 → <strong>13:55</strong> SZX 宝安 T3</span><span class="font-mono text-[var(--muted-foreground)]">CZ3466</span></div>' +
+                    '<div class="text-[var(--muted-foreground)]">⏱️ 深圳中转 5h（等上海闺蜜 16:15 到达后汇合！）</div>' +
+                    '<div class="flex justify-between pt-1 border-t border-[var(--card-border)]"><span><strong>18:55</strong> SZX 宝安 T3 → <strong>06:25+1</strong> SYD 悉尼 T1</span><span class="font-mono font-semibold text-[var(--primary)]">CZ3071</span></div>' +
+                  '</div>' +
+                '</div>' +
+                '<div>' +
+                  '<div class="font-semibold text-[var(--chart-2)] mb-1.5">返程 · 2027年9月19日 (周日)</div>' +
+                  '<div class="surface-subtle rounded-lg p-3 space-y-1.5">' +
+                    '<div class="flex justify-between"><span><strong>10:05</strong> SYD 悉尼 T1 → <strong>18:10</strong> CAN 白云 T2</span><span class="font-mono font-semibold text-[var(--primary)]">CZ326</span></div>' +
+                    '<div class="text-[var(--muted-foreground)]">⏱️ 广州中转 2h10m · 行李直达</div>' +
+                    '<div class="flex justify-between pt-1 border-t border-[var(--card-border)]"><span><strong>20:20</strong> CAN 白云 T2 → <strong>~22:35</strong> CKG 江北</span><span class="font-mono text-[var(--muted-foreground)]">CZ3439</span></div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+
+            // Passenger 2: Shanghai
+            '<div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5">' +
+              '<div class="flex items-center justify-between pb-3 border-b border-[var(--card-border)]">' +
+                '<div>' +
+                  '<span class="text-xs font-semibold px-2.5 py-1 rounded-full accent-tint-chart3 text-[var(--chart-3)]">女生 B · 上海出发</span>' +
+                '</div>' +
+                '<span class="text-xs text-[var(--muted-foreground)] font-mono">浦东去 · 虹桥回</span>' +
+              '</div>' +
+              '<div class="space-y-3.5 mt-4 text-xs">' +
+                '<div>' +
+                  '<div class="font-semibold text-[var(--primary)] mb-1.5">去程 · 2027年9月10日 (周五)</div>' +
+                  '<div class="surface-subtle rounded-lg p-3 space-y-1.5">' +
+                    '<div class="flex justify-between"><span><strong>13:30</strong> PVG 浦东 T2 → <strong>16:15</strong> SZX 宝安 T3</span><span class="font-mono text-[var(--muted-foreground)]">CZ6752</span></div>' +
+                    '<div class="text-[var(--muted-foreground)]">⏱️ 深圳中转 2h40m（落地直接和重庆闺蜜在 T3 汇合！）</div>' +
+                    '<div class="flex justify-between pt-1 border-t border-[var(--card-border)]"><span><strong>18:55</strong> SZX 宝安 T3 → <strong>06:25+1</strong> SYD 悉尼 T1</span><span class="font-mono font-semibold text-[var(--primary)]">CZ3071</span></div>' +
+                  '</div>' +
+                '</div>' +
+                '<div>' +
+                  '<div class="font-semibold text-[var(--chart-2)] mb-1.5">返程 · 2027年9月19日 (周日)</div>' +
+                  '<div class="surface-subtle rounded-lg p-3 space-y-1.5">' +
+                    '<div class="flex justify-between"><span><strong>10:05</strong> SYD 悉尼 T1 → <strong>18:10</strong> CAN 白云 T2</span><span class="font-mono font-semibold text-[var(--primary)]">CZ326</span></div>' +
+                    '<div class="text-[var(--muted-foreground)]">⏱️ 广州中转 1h50m（下机快步走国际转国内，时间够但别逗留！）</div>' +
+                    '<div class="flex justify-between pt-1 border-t border-[var(--card-border)]"><span><strong>20:00</strong> CAN 白云 T2 → <strong>22:20</strong> SHA 虹桥 T2</span><span class="font-mono text-[var(--muted-foreground)]">CZ3595</span></div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+
+          // Domestic flight purchase reminder
+          '<div class="rounded-xl border border-[var(--border)] accent-tint-warning p-4 text-xs leading-relaxed">' +
+            '<strong class="text-[var(--warning)]">✈️ 需要另外购买的两段澳洲内陆机票建议：</strong><br/>' +
+            '1. <strong>9月11日 (周六) 悉尼 SYD → 墨尔本 MEL</strong>：建议买 <strong>10:30 – 11:00 左右起飞</strong> 的航班（CZ3071 06:25 落地后需入境+取行李+检疫+换航站楼，留足 4 小时最安心，不怕国际段小延误！）。<br/>' +
+            '2. <strong>9月14日 (周二) 墨尔本 MEL → 悉尼 SYD</strong>：建议买 <strong>16:30 – 17:30 左右起飞</strong> 的航班（睡饱退房还能再玩半天，晚餐时间入住悉尼）。<br/>' +
+            '💡 航司推荐 <strong>Qantas（澳航）</strong> 或 <strong>Virgin Australia（维珍澳洲）</strong>，比廉航 Jetstar 准点且含行李省心；记得买带 23kg 托运行李的舱位！' +
+          '</div>' +
+        '</section>' +
+
+        // 9-Day Interactive Overview Grid
+        '<section class="space-y-3">' +
+          '<div class="flex items-center justify-between">' +
+            '<h3 class="text-base font-bold">每日行程卡片一览（点击任意一天查看详尽攻略）</h3>' +
+            '<span class="text-xs text-[var(--muted-foreground)]">共 10 天（含出发日与返程日）</span>' +
+          '</div>' +
+          '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">' +
+            dayCardsHtml +
+          '</div>' +
+        '</section>' +
+      '</div>';
+    }
+
+    // =========================================================================
+    // TAB 2: Detailed Daily Itinerary
+    // =========================================================================
+    function renderItinerary() {
+      var dayObj = DAYS_DATA.find(function (d) { return d.day === state.selectedDay; }) || DAYS_DATA[1];
+      var spots = dayObj.hasPlanToggle ? dayObj[state.day7Mode].spots : dayObj.spots;
+
+      var dayPills = DAYS_DATA.map(function (d) {
+        var active = d.day === state.selectedDay;
+        var cls = active
+          ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-transparent shadow-sm'
+          : 'bg-[var(--card)] text-[var(--foreground)] border-[var(--border)] hover:border-[var(--primary)]';
+        return '<button onclick="selectDay(' + d.day + ')" class="px-3.5 py-2 rounded-xl border text-left shrink-0 cursor-pointer transition-colors ' + cls + '">' +
+          '<div class="text-[11px] font-mono opacity-80">Day ' + d.day + '</div>' +
+          '<div class="text-xs font-semibold whitespace-nowrap">' + escapeHtml(d.date.split(' ')[0]) + '</div>' +
+        '</button>';
+      }).join('');
+
+      var bookingBadge = function (level, text) {
+        if (level === 'required') return '<span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full accent-tint-error text-[var(--error)]">🔴 ' + escapeHtml(text) + '</span>';
+        if (level === 'recommended') return '<span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full accent-tint-warning text-[var(--warning)]">🟡 ' + escapeHtml(text) + '</span>';
+        if (level === 'done') return '<span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full accent-tint-success text-[var(--success)]">✅ ' + escapeHtml(text) + '</span>';
+        return '<span class="text-[11px] font-medium px-2.5 py-0.5 rounded-full surface-subtle text-[var(--muted-foreground)]">🟢 ' + escapeHtml(text) + '</span>';
+      };
+
+      var planToggleHtml = '';
+      if (dayObj.hasPlanToggle) {
+        var isA = state.day7Mode === 'planA';
+        planToggleHtml = '<div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4">' +
+          '<div class="text-xs font-semibold text-[var(--muted-foreground)] mb-2.5">✨ Day 7 专属双方案切换（点击按钮切换当日行程）：</div>' +
+          '<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">' +
+            '<button onclick="setDay7Mode(\'planA\')" class="text-left p-3.5 rounded-xl border cursor-pointer transition-all ' + (isA ? 'accent-tint-primary border-[var(--primary)]' : 'surface-subtle border-[var(--card-border)] hover:border-[var(--primary)]') + '">' +
+              '<div class="text-xs font-bold ' + (isA ? 'text-[var(--primary)]' : '') + '">' + escapeHtml(dayObj.planA.label) + '</div>' +
+              '<div class="text-xs text-[var(--muted-foreground)] mt-1">' + escapeHtml(dayObj.planA.subtitle) + '</div>' +
+            '</button>' +
+            '<button onclick="setDay7Mode(\'planB\')" class="text-left p-3.5 rounded-xl border cursor-pointer transition-all ' + (!isA ? 'accent-tint-primary border-[var(--primary)]' : 'surface-subtle border-[var(--card-border)] hover:border-[var(--primary)]') + '">' +
+              '<div class="text-xs font-bold ' + (!isA ? 'text-[var(--primary)]' : '') + '">' + escapeHtml(dayObj.planB.label) + '</div>' +
+              '<div class="text-xs text-[var(--muted-foreground)] mt-1">' + escapeHtml(dayObj.planB.subtitle) + '</div>' +
+            '</button>' +
+          '</div>' +
+        '</div>';
+      }
+
+      var optionalNoteHtml = dayObj.optionalAltNote
+        ? '<div class="rounded-xl border border-[var(--card-border)] accent-tint-chart4 p-3.5 text-xs leading-relaxed">' + escapeHtml(dayObj.optionalAltNote) + '</div>'
+        : '';
+
+      var spotsHtml = spots.map(function (s, idx) {
+        var isDone = !!state.doneSpots[s.id];
+        return '<article class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 transition-all ' + (isDone ? 'opacity-75' : '') + '">' +
+          '<div class="flex flex-wrap items-start justify-between gap-3 pb-3.5 border-b border-[var(--card-border)]">' +
+            '<div class="flex items-start gap-3">' +
+              '<button onclick="toggleSpotDone(\'' + s.id + '\')" title="标记已逛完/已确认" class="mt-0.5 w-5 h-5 rounded-md border flex items-center justify-center shrink-0 cursor-pointer ' + (isDone ? 'bg-[var(--success)] border-[var(--success)] text-white' : 'border-[var(--border)] hover:border-[var(--primary)]') + '">' +
+                (isDone ? '<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>' : '') +
+              '</button>' +
+              '<div>' +
+                '<div class="flex flex-wrap items-center gap-2 mb-1">' +
+                  '<span class="text-xs font-mono font-semibold text-[var(--primary)]">' + escapeHtml(s.time) + '</span>' +
+                  '<span class="text-[11px] px-2 py-0.5 rounded-md surface-subtle text-[var(--muted-foreground)]">' + escapeHtml(s.tag) + '</span>' +
+                '</div>' +
+                '<h3 class="text-base font-bold ' + (isDone ? 'line-through text-[var(--muted-foreground)]' : '') + '">' + escapeHtml(s.name) + '</h3>' +
+              '</div>' +
+            '</div>' +
+            bookingBadge(s.bookingLevel, s.booking) +
+          '</div>' +
+
+          // 5 Structured Detail Blocks
+          '<div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 mt-4 text-xs leading-relaxed">' +
+            '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]">' +
+              '<div class="font-semibold text-[var(--foreground)] mb-1">📍 景点/活动介绍</div>' +
+              '<p class="text-[var(--muted-foreground)]">' + formatMultiline(s.intro) + '</p>' +
+            '</div>' +
+            '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]">' +
+              '<div class="font-semibold text-[var(--foreground)] mb-1">✨ 为什么值得去</div>' +
+              '<p class="text-[var(--muted-foreground)]">' + formatMultiline(s.why) + '</p>' +
+            '</div>' +
+            '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]">' +
+              '<div class="font-semibold text-[var(--foreground)] mb-1">🚆 怎么去（交通指南）</div>' +
+              '<p class="text-[var(--muted-foreground)]">' + formatMultiline(s.how) + '</p>' +
+            '</div>' +
+            '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]">' +
+              '<div class="font-semibold text-[var(--foreground)] mb-1">🎟️ 是否需要提前预约</div>' +
+              '<p class="text-[var(--muted-foreground)]">' + formatMultiline(s.reserve) + '</p>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="mt-3.5 rounded-xl accent-tint-warning px-3.5 py-2.5 text-xs leading-relaxed">' +
+            '<span class="font-semibold text-[var(--warning)]">⚠️ 游玩注意事项：</span>' +
+            '<span class="text-[var(--foreground)]">' + formatMultiline(s.tips) + '</span>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+
+      var savedNote = state.dayNotes[dayObj.day] || '';
+
+      return '<div class="space-y-5 fade-in">' +
+        // Horizontal Day Selector
+        '<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">' +
+          dayPills +
+        '</div>' +
+
+        // Day Header Banner
+        '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5">' +
+          '<div class="flex flex-wrap items-center justify-between gap-2 mb-2">' +
+            '<div class="flex items-center gap-2">' +
+              '<span class="text-xs font-mono font-bold px-2.5 py-1 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)]">Day ' + dayObj.day + '</span>' +
+              '<span class="text-sm font-semibold">' + escapeHtml(dayObj.date) + ' · ' + escapeHtml(dayObj.city) + '</span>' +
+            '</div>' +
+            '<div class="flex flex-wrap items-center gap-2 text-xs text-[var(--muted-foreground)]">' +
+              '<span class="flex items-center gap-1">' + getIcon('clock', 'w-3.5 h-3.5') + escapeHtml(dayObj.wakeTime) + '</span>' +
+              '<span>·</span>' +
+              '<span class="flex items-center gap-1">' + getIcon('sun', 'w-3.5 h-3.5') + '日落 ' + escapeHtml(dayObj.sunset) + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<h2 class="text-lg font-bold tracking-tight mt-1">' + escapeHtml(dayObj.title) + '</h2>' +
+          '<p class="text-xs sm:text-sm text-[var(--muted-foreground)] mt-2 leading-relaxed">' + escapeHtml(dayObj.summary) + '</p>' +
+
+          '<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 pt-3.5 border-t border-[var(--card-border)] text-xs">' +
+            '<div class="flex items-start gap-2">' +
+              '<span class="text-[var(--primary)] shrink-0 mt-0.5">' + getIcon('hotel', 'w-4 h-4') + '</span>' +
+              '<div><strong>当晚住宿：</strong><span class="text-[var(--muted-foreground)]">' + escapeHtml(dayObj.hotel) + '</span></div>' +
+            '</div>' +
+            '<div class="flex items-start gap-2">' +
+              '<span class="text-[var(--success)] shrink-0 mt-0.5">' + getIcon('shield', 'w-4 h-4') + '</span>' +
+              '<div><strong>女生晚间提示：</strong><span class="text-[var(--muted-foreground)]">' + escapeHtml(dayObj.safetyNote) + '</span></div>' +
+            '</div>' +
+          '</div>' +
+        '</section>' +
+
+        planToggleHtml +
+        optionalNoteHtml +
+
+        // Activity Cards
+        '<div class="space-y-4">' +
+          spotsHtml +
+        '</div>' +
+
+        // Per-day Editable Note Box + Prev/Next Day buttons
+        '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 space-y-2.5">' +
+          '<label for="day-note-input" class="block text-xs font-semibold">📝 Day ' + dayObj.day + ' 我的私人备忘（自动本地保存，可记下团号、餐厅预约时间或集合点）</label>' +
+          '<textarea id="day-note-input" oninput="updateDayNote(' + dayObj.day + ', this.value)" placeholder="例如：已约歌剧院 10:30 中文团 / 大洋路集合点 St Paul\'s Cathedral..." class="w-full h-20 p-3 rounded-xl surface-subtle border border-[var(--card-border)] text-xs text-[var(--foreground)] focus:outline-none focus:border-[var(--primary)]">' + escapeHtml(savedNote) + '</textarea>' +
+          '<div class="flex items-center justify-between pt-2">' +
+            '<button onclick="selectDay(' + Math.max(0, dayObj.day - 1) + ')" ' + (dayObj.day === 0 ? 'disabled' : '') + ' class="px-3.5 py-2 rounded-xl border border-[var(--border)] bg-[var(--card)] text-xs font-medium disabled:opacity-40 cursor-pointer hover:border-[var(--primary)]">← 上一天</button>' +
+            '<span class="text-xs text-[var(--muted-foreground)]">Day ' + dayObj.day + ' / 9</span>' +
+            '<button onclick="selectDay(' + Math.min(9, dayObj.day + 1) + ')" ' + (dayObj.day === 9 ? 'disabled' : '') + ' class="px-3.5 py-2 rounded-xl border border-[var(--border)] bg-[var(--card)] text-xs font-medium disabled:opacity-40 cursor-pointer hover:border-[var(--primary)]">下一天 →</button>' +
+          '</div>' +
+        '</section>' +
+      '</div>';
+    }
+
+    // =========================================================================
+    // TAB 3: Hotels & Areas Recommendation
+    // =========================================================================
+    function renderHotels() {
+      var city = state.hotelCity;
+      var areas = HOTEL_AREAS[city];
+
+      var cardsHtml = areas.map(function (a, i) {
+        return '<article class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-4">' +
+          '<div class="flex flex-wrap items-start justify-between gap-2 pb-3 border-b border-[var(--card-border)]">' +
+            '<div>' +
+              '<span class="inline-block text-[11px] font-semibold px-2.5 py-0.5 rounded-full ' + (i === 0 ? 'accent-tint-primary text-[var(--primary)]' : 'surface-subtle text-[var(--muted-foreground)]') + ' mb-1.5">' + escapeHtml(a.rank) + '</span>' +
+              '<h3 class="text-base font-bold">' + escapeHtml(a.name) + '</h3>' +
+              '<p class="text-xs text-[var(--muted-foreground)] mt-1 flex items-center gap-1.5">' + getIcon('pin', 'w-3.5 h-3.5 text-[var(--primary)]') + escapeHtml(a.stations) + '</p>' +
+            '</div>' +
+            '<div class="text-right">' +
+              '<div class="text-xs font-semibold text-[var(--success)]">夜归安全 ' + escapeHtml(a.safetyScore) + '</div>' +
+              '<div class="text-xs text-[var(--muted-foreground)] mt-0.5">' + escapeHtml(a.priceRange) + '</div>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="text-xs leading-relaxed space-y-2.5">' +
+            '<p><strong>为什么强烈适合你们：</strong>' + escapeHtml(a.whyGirls) + '</p>' +
+            '<p class="surface-subtle rounded-xl p-3 border border-[var(--card-border)]"><strong>🏨 可参考地段/酒店举例：</strong><span class="text-[var(--muted-foreground)]">' + escapeHtml(a.landmarks) + '</span></p>' +
+          '</div>' +
+
+          '<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">' +
+            '<div class="rounded-xl accent-tint-success p-3">' +
+              '<div class="font-semibold text-[var(--success)] mb-1.5">👍 区域亮点</div>' +
+              '<ul class="space-y-1 text-[var(--foreground)]">' +
+                a.pros.map(function (p) { return '<li>• ' + escapeHtml(p) + '</li>'; }).join('') +
+              '</ul>' +
+            '</div>' +
+            '<div class="rounded-xl accent-tint-warning p-3">' +
+              '<div class="font-semibold text-[var(--warning)] mb-1.5">⚠️ 选房避坑</div>' +
+              '<p class="text-[var(--foreground)] leading-relaxed">' + escapeHtml(a.avoidTip) + '</p>' +
+              '<p class="text-[var(--muted-foreground)] mt-1">注意：' + escapeHtml(a.cons.join('；')) + '</p>' +
+            '</div>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+
+      var noteVal = state.selectedHotelNote[city] || '';
+
+      return '<div class="space-y-5 fade-in">' +
+        '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5">' +
+          '<h2 class="text-lg font-bold">两个女生选酒店核心策略：全程只住 2 家，锁死核心交通枢纽！</h2>' +
+          '<p class="text-xs sm:text-sm text-[var(--muted-foreground)] mt-1.5 leading-relaxed">不自驾的女生出行，住宿选对位置等于成功一半！核心原则：<strong>① 离主干道火车/电车站步行 5 分钟内；② 墨尔本住 Free Tram Zone 里方便一日团接送；③ 悉尼住 Town Hall/QVB 或 Circular Quay，最后两天买买买随时放东西+直达机场！</strong></p>' +
+
+          '<div class="flex items-center gap-2.5 mt-4">' +
+            '<button onclick="setHotelCity(\'melbourne\')" class="px-4 py-2 rounded-xl text-xs font-semibold border cursor-pointer transition-colors ' + (city === 'melbourne' ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-transparent' : 'bg-[var(--card)] border-[var(--border)] text-[var(--foreground)]') + '">墨尔本 3 晚 (9/11–9/14)</button>' +
+            '<button onclick="setHotelCity(\'sydney\')" class="px-4 py-2 rounded-xl text-xs font-semibold border cursor-pointer transition-colors ' + (city === 'sydney' ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-transparent' : 'bg-[var(--card)] border-[var(--border)] text-[var(--foreground)]') + '">悉尼 5 晚 (9/14–9/19)</button>' +
+          '</div>' +
+        '</section>' +
+
+        '<div class="space-y-4">' + cardsHtml + '</div>' +
+
+        // Hotel Comparison & Personal Picker Note
+        '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-3">' +
+          '<div class="text-xs font-semibold">📌 我的' + (city === 'melbourne' ? '墨尔本' : '悉尼') + '心仪酒店备忘（方便和闺蜜对比记录）</div>' +
+          '<textarea oninput="updateHotelNote(\'' + city + '\', this.value)" placeholder="把你在 Booking / 携程 / Agoda 收藏的候选酒店名称、价格、是否含早记在这里..." class="w-full h-20 p-3 rounded-xl surface-subtle border border-[var(--card-border)] text-xs text-[var(--foreground)] focus:outline-none focus:border-[var(--primary)]">' + escapeHtml(noteVal) + '</textarea>' +
+          '<div class="text-xs text-[var(--muted-foreground)]">💡 订房小贴士：澳洲 2 人双床房叫 <strong>Twin Room (2 Single Beds)</strong>，订房时一定要看清床型！另外澳洲很多星级酒店和公寓酒店（如 Meriton Suites）都不主动提供一次性牙刷拖鞋，建议自备！</div>' +
+        '</section>' +
+      '</div>';
+    }
+
+    // =========================================================================
+    // TAB 4: 2027 Musicals Guide
+    // =========================================================================
+    function renderMusicals() {
+      var filter = state.musicalCity;
+      var list = MUSICALS_DATA.filter(function (m) {
+        return filter === 'all' || m.cityKey === filter;
+      });
+
+      var cardsHtml = list.map(function (m) {
+        var badgeCls = m.badgeType === 'hot' ? 'accent-tint-error text-[var(--error)]'
+          : m.badgeType === 'classic' ? 'accent-tint-warning text-[var(--warning)]'
+          : 'accent-tint-chart4 text-[var(--chart-4)]';
+
+        return '<article class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-3.5">' +
+          '<div class="flex flex-wrap items-start justify-between gap-2 pb-3 border-b border-[var(--card-border)]">' +
+            '<div>' +
+              '<div class="flex flex-wrap items-center gap-2 mb-1">' +
+                '<span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full surface-subtle">' + escapeHtml(m.city) + '</span>' +
+                '<span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full ' + badgeCls + '">' + escapeHtml(m.badge) + '</span>' +
+                (m.seenBefore ? '<span class="text-[11px] px-2 py-0.5 rounded-full border border-[var(--border)] text-[var(--muted-foreground)]">你看过·但场地/版本绝佳</span>' : '<span class="text-[11px] font-semibold px-2 py-0.5 rounded-full accent-tint-success text-[var(--success)]">✨ 全新未看必冲</span>') +
+              '</div>' +
+              '<h3 class="text-base font-bold">' + escapeHtml(m.cnTitle) + ' <span class="font-normal text-xs text-[var(--muted-foreground)]">' + escapeHtml(m.title) + '</span></h3>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">' +
+            '<div class="surface-subtle rounded-xl p-3 border border-[var(--card-border)]"><strong>🏛️ 演出剧院：</strong>' + escapeHtml(m.venue) + '</div>' +
+            '<div class="surface-subtle rounded-xl p-3 border border-[var(--card-border)]"><strong>📅 2027 档期：</strong>' + escapeHtml(m.dates) + '</div>' +
+          '</div>' +
+
+          '<div class="text-xs leading-relaxed space-y-2">' +
+            '<p><strong>🎯 与你们行程匹配度：</strong><span class="text-[var(--primary)] font-medium">' + escapeHtml(m.fitTrip) + '</span></p>' +
+            '<p><strong>🎭 为什么推荐给你：</strong><span class="text-[var(--muted-foreground)]">' + escapeHtml(m.whyWatch) + '</span></p>' +
+          '</div>' +
+
+          '<div class="rounded-xl accent-tint-primary p-3.5 text-xs space-y-1">' +
+            '<div><strong>🎟️ 购票状态：</strong>' + escapeHtml(m.ticketStatus) + '</div>' +
+            '<div><strong>🔗 官方购票渠道：</strong><span class="font-mono">' + escapeHtml(m.whereToBuy) + '</span></div>' +
+            '<div><strong>⚡ 行动建议：</strong>' + escapeHtml(m.action) + '</div>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+
+      return '<div class="space-y-5 fade-in">' +
+        // Hamilton Answer Callout
+        '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-3">' +
+          '<h2 class="text-lg font-bold">🎭 2027年9月 悉尼 & 墨尔本真实音乐剧档期专属情报</h2>' +
+          '<div class="rounded-xl accent-tint-warning p-4 text-xs leading-relaxed">' +
+            '<strong class="text-[var(--warning)]">关于你问的《汉密尔顿 Hamilton》：</strong><br/>' +
+            '截至目前（2026年底已官宣的 2027 演出季），<strong>《汉密尔顿》澳洲返场巡演已经结束，2027 年悉尼和墨尔本暂无排期</strong>。不过！你们 2027 年 9 月的档期居然撞上了<strong>三部西区/百老汇现象级神剧的澳洲首演</strong>（你全都没看过！）以及<strong>悉尼歌剧院版《悲惨世界》40 周年全本</strong>，简直神仙撞期！' +
+          '</div>' +
+
+          '<div class="flex flex-wrap items-center gap-2 pt-1">' +
+            '<button onclick="setMusicalCity(\'all\')" class="px-3.5 py-1.5 rounded-xl text-xs font-medium border cursor-pointer ' + (filter === 'all' ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-transparent' : 'bg-[var(--card)] border-[var(--border)]') + '">全部推荐 (7部)</button>' +
+            '<button onclick="setMusicalCity(\'melbourne\')" class="px-3.5 py-1.5 rounded-xl text-xs font-medium border cursor-pointer ' + (filter === 'melbourne' ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-transparent' : 'bg-[var(--card)] border-[var(--border)]') + '">墨尔本 9/11–9/14</button>' +
+            '<button onclick="setMusicalCity(\'sydney\')" class="px-3.5 py-1.5 rounded-xl text-xs font-medium border cursor-pointer ' + (filter === 'sydney' ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-transparent' : 'bg-[var(--card)] border-[var(--border)]') + '">悉尼 9/15–9/18</button>' +
+          '</div>' +
+        '</section>' +
+
+        '<div class="space-y-4">' + cardsHtml + '</div>' +
+
+        // Theatre Buying & Etiquette Tips
+        '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-3 text-xs leading-relaxed">' +
+          '<h3 class="text-sm font-bold">🎫 澳洲买音乐剧票防坑 & 观剧须知</h3>' +
+          '<div class="grid grid-cols-1 md:grid-cols-2 gap-3">' +
+            '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]">' +
+              '<div class="font-semibold mb-1">1. 什么时候买票？在哪里买？</div>' +
+              '<p class="text-[var(--muted-foreground)]">热门大剧建议 <strong>提前 3–6 个月</strong> 抢好座位（或现在就填官网 Waitlist 等开票邮件）。<strong>只认准官方售票渠道</strong>：Sydney Opera House 官网、Ticketmaster AU、Ticketek、Marriner Group、Arts Centre Melbourne。<strong>⚠️ 千万避开 Viagogo 等高价黄牛转售网站！</strong></p>' +
+            '</div>' +
+            '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]">' +
+              '<div class="font-semibold mb-1">2. 选座与低价彩蛋 (Rush Tickets)</div>' +
+              '<p class="text-[var(--muted-foreground)]">Stalls（一楼池座）第 6–14 排中间、或 Dress Circle（二楼前排）第 1–3 排视野最棒！部分剧目会在 <strong>TodayTix App</strong> 推出每日 $40–50 抽奖票，但远道而来的必看场次还是建议提前买正价票锁座！</p>' +
+            '</div>' +
+            '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]">' +
+              '<div class="font-semibold mb-1">3. 穿搭与入场礼仪</div>' +
+              '<p class="text-[var(--muted-foreground)]">澳洲看剧氛围轻松，Smart Casual（连衣裙/小风衣/整洁休闲装）即可，去悉尼歌剧院看夜场可以稍微打扮一下，中场休息和开场前拍照超级美！<strong>提早 30–40 分钟到场</strong>，演出全程绝对禁止拍照录像。</p>' +
+            '</div>' +
+            '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]">' +
+              '<div class="font-semibold mb-1">4. 看完散场两个女生安全吗？</div>' +
+              '<p class="text-[var(--muted-foreground)]">非常安全！晚场一般 <strong>21:45–22:15 散场</strong>，上千名观众一起涌出剧院，沿街灯火通明。如果不想走路，剧院门口直接叫 Uber 5–10 分钟直达酒店门口即可！</p>' +
+            '</div>' +
+          '</div>' +
+        '</section>' +
+      '</div>';
+    }
+
+    // =========================================================================
+    // TAB 5: Food, Shopping & TRS Tax Refund
+    // =========================================================================
+    function renderFoodShop() {
+      var sub = state.foodSubTab;
+      var bodyHtml = '';
+
+      if (sub === 'food') {
+        var foodCards = FOOD_DATA.map(function (f) {
+          var liked = !!state.wishlistFood[f.id];
+          return '<div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 flex flex-col justify-between gap-3">' +
+            '<div>' +
+              '<div class="flex items-start justify-between gap-2 mb-2">' +
+                '<div class="flex flex-wrap items-center gap-1.5">' +
+                  '<span class="text-[11px] font-semibold px-2 py-0.5 rounded-md ' + (f.city === '墨尔本' ? 'accent-tint-chart2 text-[var(--chart-2)]' : 'accent-tint-primary text-[var(--primary)]') + '">' + escapeHtml(f.city) + '</span>' +
+                  '<span class="text-[11px] px-2 py-0.5 rounded-md surface-subtle text-[var(--muted-foreground)]">' + escapeHtml(f.cat) + '</span>' +
+                '</div>' +
+                '<button onclick="toggleFoodLike(\'' + f.id + '\')" title="加入想吃清单" class="p-1 rounded-lg cursor-pointer transition-transform active:scale-90 ' + (liked ? 'text-[var(--error)]' : 'text-[var(--muted-foreground)] hover:text-[var(--error)]') + '">' +
+                  '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="' + (liked ? 'currentColor' : 'none') + '" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>' +
+                '</button>' +
+              '</div>' +
+              '<h4 class="font-bold text-sm">' + escapeHtml(f.name) + '</h4>' +
+              '<div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">📍 ' + escapeHtml(f.area) + '</div>' +
+              '<p class="text-xs mt-2 leading-relaxed"><strong>必点招牌：</strong>' + escapeHtml(f.dish) + '</p>' +
+            '</div>' +
+            '<div class="text-xs text-[var(--muted-foreground)] surface-subtle rounded-xl p-2.5 border border-[var(--card-border)]">💡 ' + escapeHtml(f.tip) + '</div>' +
+          '</div>';
+        }).join('');
+
+        bodyHtml = '<div class="space-y-4">' +
+          '<div class="rounded-xl accent-tint-primary p-4 text-xs leading-relaxed">' +
+            '☕ <strong>澳洲点餐 & 咖啡文化小科普：</strong>① 澳洲没有美式“星巴克文化”，独立咖啡馆强到离谱！必点国民咖啡 <strong>Flat White（澳白）</strong>、<strong>Magic（墨尔本限定双份小拿铁）</strong>、<strong>Iced Latte</strong>；② 澳洲<strong>完全不需要给小费</strong>！③ 周末（周六/周日）和公共假期餐厅普遍会收 <strong>10%–15% 附加费 (Weekend Surcharge)</strong>，刷卡也可能有 1%–1.5% 手续费，属于正常现象。点击卡片右上角爱心即可收藏你们想吃的店！' +
+          '</div>' +
+          '<div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">' + foodCards + '</div>' +
+        '</div>';
+      } else {
+        var shopListHtml = SHOPPING_ITEMS.map(function (s) {
+          var checked = !!state.shoppingChecked[s.id];
+          return '<label class="flex items-start gap-3 p-3.5 rounded-xl bg-[var(--card)] border border-[var(--border)] cursor-pointer hover:border-[var(--primary)] transition-colors">' +
+            '<input type="checkbox" ' + (checked ? 'checked' : '') + ' onchange="toggleShoppingItem(\'' + s.id + '\')" class="mt-1 accent-[var(--primary)] w-4 h-4 shrink-0" />' +
+            '<div class="text-xs leading-relaxed">' +
+              '<div class="flex flex-wrap items-center gap-2">' +
+                '<span class="font-bold text-sm ' + (checked ? 'line-through text-[var(--muted-foreground)]' : '') + '">' + escapeHtml(s.name) + '</span>' +
+                '<span class="text-[11px] px-2 py-0.5 rounded-md surface-subtle text-[var(--muted-foreground)]">' + escapeHtml(s.cat) + '</span>' +
+              '</div>' +
+              '<p class="text-[var(--muted-foreground)] mt-1">' + escapeHtml(s.detail) + '</p>' +
+            '</div>' +
+          '</label>';
+        }).join('');
+
+        bodyHtml = '<div class="space-y-5">' +
+          // Shopping Route Map
+          '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-3">' +
+            '<h3 class="text-base font-bold">🛍️ 悉尼最后两天（周四晚预热 + 周六扫货）黄金购物动线</h3>' +
+            '<p class="text-xs text-[var(--muted-foreground)] leading-relaxed">所有商场全部集中在 <strong>Town Hall 站方圆 300 米</strong>，一条线走完绝不绕路！<br/>⚠️ 牢记营业时间：平时和周六百货大多 <strong>17:30–18:00 关门</strong>，只有 <strong>周四晚开到 21:00</strong>！药房和超市开到 20:00–22:00。</p>' +
+            '<div class="grid grid-cols-1 sm:grid-cols-4 gap-2.5 text-xs pt-1">' +
+              '<div class="surface-subtle rounded-xl p-3 border border-[var(--card-border)]"><div class="font-bold text-[var(--primary)]">第1站 · QVB</div><div class="text-[var(--muted-foreground)] mt-1">百年最美商场：Haigh\'s巧克力、UGG、饰品轻奢</div></div>' +
+              '<div class="surface-subtle rounded-xl p-3 border border-[var(--card-border)]"><div class="font-bold text-[var(--primary)]">第2站 · Pitt St & Westfield</div><div class="text-[var(--muted-foreground)] mt-1">Aesop、Jurlique、Lululemon、潮流服饰与奢侈品</div></div>' +
+              '<div class="surface-subtle rounded-xl p-3 border border-[var(--card-border)]"><div class="font-bold text-[var(--primary)]">第3站 · David Jones / Myer</div><div class="text-[var(--muted-foreground)] mt-1">高端百货美妆香氛，极易同店凑满 $300 退税！</div></div>' +
+              '<div class="surface-subtle rounded-xl p-3 border border-[var(--card-border)]"><div class="font-bold text-[var(--primary)]">第4站 · Chemist Warehouse</div><div class="text-[var(--muted-foreground)] mt-1">18:00 以后来扫保健品、木瓜膏、绵羊油、防晒！</div></div>' +
+            '</div>' +
+          '</section>' +
+
+          // Shopping Checklist
+          '<section class="space-y-2.5">' +
+            '<h3 class="text-sm font-bold">🎁 澳洲必买好物清单（可勾选）</h3>' +
+            '<div class="grid grid-cols-1 gap-2.5">' + shopListHtml + '</div>' +
+          '</section>' +
+
+          // TRS Tax Refund Step-by-Step Guide
+          '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-3.5">' +
+            '<div class="flex flex-wrap items-center justify-between gap-2">' +
+              '<h3 class="text-base font-bold">💸 悉尼机场 TRS 退税保姆级 6 步实操（退约 9.09%！）</h3>' +
+              '<span class="text-xs font-semibold px-2.5 py-1 rounded-full accent-tint-success text-[var(--success)]">满 AUD $300 即可退税</span>' +
+            '</div>' +
+            '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs leading-relaxed">' +
+              '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]"><div class="font-bold mb-1">1. 满足门槛</div><p class="text-[var(--muted-foreground)]">离境前 60 天内，在<strong>同一商家（同一 ABN 税号）</strong>消费含税满 <strong>AUD $300</strong>（可多张小票累加，只要 ABN 相同！）。</p></div>' +
+              '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]"><div class="font-bold mb-1">2. 留好纸质原件发票</div><p class="text-[var(--muted-foreground)]">必须保留<strong>原始纸质 Tax Invoice</strong>（拍照或电子截图常被拒！）。单张超 AUD $1,000 须让店员印上你的护照姓名。</p></div>' +
+              '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]"><div class="font-bold mb-1">3. 前一晚填好官方 App</div><p class="text-[var(--muted-foreground)]">下载 <strong>My TRS Claim</strong> App，提前录入航班、发票号与收款信用卡，生成<strong>专属 QR 二维码</strong>，机场可走快速通道！</p></div>' +
+              '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]"><div class="font-bold mb-1">4. 托运商品值机前先盖章！</div><p class="text-[var(--muted-foreground)]">超过 100ml 的护肤品/保健品/蜂蜜/大件行李必须托运：<strong>去南航值机前</strong>，先拖箱子去 T1 的 <strong>ABF Client Services / TRS 查验台</strong>给官员验货盖章！</p></div>' +
+              '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]"><div class="font-bold mb-1">5. 随身商品安检后退税</div><p class="text-[var(--muted-foreground)]">包包/首饰/手表等随身携带；过了出境边检和安检后，就在 <strong>Heinemann 免税店入口右侧</strong>找到 TRS 退税柜台排队扫码提交。</p></div>' +
+              '<div class="surface-subtle rounded-xl p-3.5 border border-[var(--card-border)]"><div class="font-bold mb-1">6. 退税到账方式</div><p class="text-[var(--muted-foreground)]">不退现金！直接原路退到你填写的 Visa / Mastercard / 银联信用卡（或澳洲银行卡），通常 1–6 周内到账。9月19日务必 07:00 到机场留足排队时间！</p></div>' +
+            '</div>' +
+          '</section>' +
+        '</div>';
+      }
+
+      return '<div class="space-y-5 fade-in">' +
+        '<div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3">' +
+          '<div>' +
+            '<h2 class="text-base font-bold">澳洲美食雷达 & 悉尼终极扫货退税攻略</h2>' +
+            '<p class="text-xs text-[var(--muted-foreground)] mt-0.5">吃好墨尔本咖啡与悉尼海鲜，最后两天一站式买齐伴手礼拿满退税！</p>' +
+          '</div>' +
+          '<div class="flex gap-2">' +
+            '<button onclick="setFoodSubTab(\'food\')" class="px-4 py-2 rounded-xl text-xs font-semibold border cursor-pointer ' + (sub === 'food' ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-transparent' : 'bg-[var(--card)] border-[var(--border)]') + '">🍽️ 必吃美食地图</button>' +
+            '<button onclick="setFoodSubTab(\'shop\')" class="px-4 py-2 rounded-xl text-xs font-semibold border cursor-pointer ' + (sub === 'shop' ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-transparent' : 'bg-[var(--card)] border-[var(--border)]') + '">🛍️ 购物清单 & TRS退税</button>' +
+          '</div>' +
+        '</div>' +
+        bodyHtml +
+      '</div>';
+    }
+
+    // =========================================================================
+    // TAB 6: Two Girls Safety & Essential Australia Tips
+    // =========================================================================
+    function renderSafety() {
+      return '<div class="space-y-5 fade-in">' +
+        // Hero Safety Answer
+        '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-4">' +
+          '<div class="flex items-start gap-3">' +
+            '<div class="w-10 h-10 rounded-xl accent-tint-success text-[var(--success)] flex items-center justify-center shrink-0">' + getIcon('shield', 'w-5 h-5') + '</div>' +
+            '<div>' +
+              '<h2 class="text-lg font-bold">两个女生第一次去澳洲：晚上需要很早回酒店吗？</h2>' +
+              '<p class="text-xs sm:text-sm text-[var(--muted-foreground)] mt-1 leading-relaxed"><strong>结论：不必过度紧张（不必 6 点就锁门回酒店），但建议保持「22:00–22:30 左右归巢 + 走明亮主街 + 较远直接打 Uber」的聪明习惯！</strong> 悉尼和墨尔本市中心整体治安远好于很多欧美大城市，严格控枪且市民友善。晚上看音乐剧（通常 22:00 左右散场）或海港吃晚餐完全没问题！</p>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 text-xs leading-relaxed">' +
+            '<div class="rounded-xl accent-tint-success p-4 space-y-2">' +
+              '<div class="font-bold text-[var(--success)]">✅ 晚上放心逛的安全区域</div>' +
+              '<ul class="space-y-1.5">' +
+                '<li>• <strong>悉尼：</strong>Circular Quay 环形码头、歌剧院步道、Darling Harbour 达令港、Barangaroo、George St / Pitt St 主干道、周四深夜购物商圈。</li>' +
+                '<li>• <strong>墨尔本：</strong>Collins St、Bourke St、Swanston St、Southbank 雅拉河滨步道、唐人街主街、各大音乐剧院门口。</li>' +
+                '<li>• <strong>剧院散场夜：</strong>散场时成百上千观众同行，超级热闹；如果酒店超过步行 10 分钟，直接用 <strong>Uber / DiDi</strong> 门到门，两个女生平摊只要十几澳币！</li>' +
+              '</ul>' +
+            '</div>' +
+            '<div class="rounded-xl accent-tint-error p-4 space-y-2">' +
+              '<div class="font-bold text-[var(--error)]">⚠️ 女生天黑后注意避开的小坑</div>' +
+              '<ul class="space-y-1.5">' +
+                '<li>• <strong>别走黑灯公园与小巷：</strong>天黑后绕开 Hyde Park 内部、皇家植物园内部、Flagstaff Gardens、以及涂鸦巷 Hosier Lane。</li>' +
+                '<li>• <strong>远离醉汉与特定街区：</strong>周五/周六深夜酒吧门口偶有喝醉大声喧哗的人；悉尼避开 <strong>Kings Cross</strong>，墨尔本/悉尼火车站（Central / Flinders St）周边若遇流浪汉，保持镇定、不眼神对视、快步走开即可。</li>' +
+                '<li>• <strong>紧急电话牢记：</strong>澳洲报警/急救/火警统一号码是 <strong class="font-mono text-sm">000</strong>（不是 911！）。</li>' +
+              '</ul>' +
+            '</div>' +
+          '</div>' +
+        '</section>' +
+
+        // Practical Australia Travel Knowledge Grid
+        '<section class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs leading-relaxed">' +
+          '<div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-2">' +
+            '<h3 class="text-sm font-bold">🚗 关于中国驾照与不自驾的贴心说明</h3>' +
+            '<p class="text-[var(--muted-foreground)]">悄悄补充一个冷知识：其实<strong>中国驾照 + NAATI 认证英文翻译件</strong>在维州（墨尔本）和新州（悉尼）是可以合法租车的！<strong>但是！</strong>对于第一次去澳洲的两个女生来说，我们依然<strong>强烈建议不要自驾</strong>：澳洲是右舵靠左行驶、环岛规则复杂，大洋路悬崖弯道多且往返开车超 9 小时极累。报 12–16 人精品小团（含司机导游），安全又轻松，还能在车上补觉看风景，是最明智的选择！</p>' +
+          '</div>' +
+
+          '<div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-2">' +
+            '<h3 class="text-sm font-bold">🚇 两城公交神便利：不用买实体交通卡！</h3>' +
+            '<p class="text-[var(--muted-foreground)]">好消息！截至 2026–2027 年，<strong>悉尼（Opal）和墨尔本（Myki 系统升级后）都已支持直接刷 Visa/Mastercard 非接触银行卡或 Apple Pay</strong> 上下车拍卡（Tap on / Tap off）！<br/>• <strong>墨尔本 CBD 免费电车区 (Free Tram Zone)</strong> 坐电车完全不用刷卡（出边界才需刷）；<br/>• <strong>注意：</strong>每人必须用<strong>各自独立的一张卡/一部手机</strong>刷卡，不能两个人共用一张信用卡拍两次！</p>' +
+          '</div>' +
+
+          '<div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-2">' +
+            '<h3 class="text-sm font-bold">🌤️ 9月中旬天气与穿搭（早春洋葱穿衣法）</h3>' +
+            '<p class="text-[var(--muted-foreground)]">9 月是南半球的初春！<strong>悉尼约 11–21°C</strong>，白天阳光灿烂穿短袖+薄针织很舒服，早晚凉；<strong>墨尔本约 9–18°C</strong>，「一天四季」随时变脸，尤其大洋路十二门徒海风极猛！<br/>• 必备：防风风衣/轻薄羽绒或卫衣叠穿 + 折叠伞 + 舒适运动鞋。<br/>• <strong>超级重要：</strong>澳洲上空臭氧层薄，即使阴天和初春紫外线也爆表！<strong>墨镜 + SPF50+ 防晒霜</strong>每天必涂！</p>' +
+          '</div>' +
+
+          '<div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-2">' +
+            '<h3 class="text-sm font-bold">🔌 电源插座神技 & 商店早关门提醒</h3>' +
+            '<p class="text-[var(--muted-foreground)]">• <strong>插座惊喜：</strong>澳洲使用 230V <strong>三孔八字插头（Type I）——和中国三孔插头完全一模一样！</strong>直接带一个国内三孔插线板，就能轻松搞定两个女生所有的手机、卷发棒和充电宝（注意中国两孔扁插头无法直插，所以带三孔插线板或两孔转换头即可）！<br/>• <strong>早关门文化：</strong>澳洲商场和咖啡馆关门极早！很多咖啡店 15:00 就关门，商场平日/周末 17:30–18:00 关门，唯有<strong>悉尼周四 / 墨尔本周五开到 21:00</strong>！</p>' +
+          '</div>' +
+
+          '<div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 space-y-2 md:col-span-2">' +
+            '<h3 class="text-sm font-bold text-[var(--error)]">🚨 澳洲入境生物检疫红线（史上最严，千万别踩雷！）</h3>' +
+            '<p class="text-[var(--muted-foreground)]">澳洲为保护独特生态，对入境食品动植物查验极其严苛，一旦隐瞒未报不仅高额罚款甚至可能当场取消签证！<br/>• <strong>绝对不要带：</strong>任何肉类零食（牛肉干、鸭脖、火腿肠、肉松饼、含肉方便面）、新鲜水果蔬菜、鸡蛋制品、种子坚果、中药材、木制工艺品。<br/>• <strong>铁律口诀：</strong>「不确定就申报！」只要带了任何吃的、茶叶、感冒药，在飞机上发放入境旅客卡 (IPC) 时<strong>务必勾选 YES 走申报通道</strong>。只要你诚实申报，就算有不能带的最多当场丢掉，绝对不会罚款！</p>' +
+          '</div>' +
+        '</section>' +
+      '</div>';
+    }
+
+    // =========================================================================
+    // TAB 7: Interactive Pre-trip Checklist
+    // =========================================================================
+    function renderChecklist() {
+      var total = 0;
+      var done = 0;
+      PREP_CHECKLIST.forEach(function (g) {
+        g.items.forEach(function (item) {
+          total++;
+          if (state.checkedPrep[item.id]) done++;
+        });
+      });
+      state.customPrepItems.forEach(function (item) {
+        total++;
+        if (state.checkedPrep[item.id]) done++;
+      });
+      var pct = total > 0 ? Math.round((done / total) * 100) : 0;
+
+      var groupsHtml = PREP_CHECKLIST.map(function (group) {
+        var itemsHtml = group.items.map(function (item) {
+          var isChecked = !!state.checkedPrep[item.id];
+          return '<label class="flex items-start gap-3 p-3.5 rounded-xl bg-[var(--card)] border border-[var(--card-border)] hover:border-[var(--primary)] transition-colors cursor-pointer">' +
+            '<input type="checkbox" ' + (isChecked ? 'checked' : '') + ' onchange="togglePrepItem(\'' + item.id + '\')" class="mt-0.5 w-4 h-4 accent-[var(--primary)] shrink-0" />' +
+            '<div class="flex-1 text-xs leading-relaxed">' +
+              '<span class="' + (isChecked ? 'line-through text-[var(--muted-foreground)]' : 'text-[var(--foreground)]') + '">' + escapeHtml(item.text) + '</span>' +
+            '</div>' +
+            '<span class="text-[11px] px-2 py-0.5 rounded-md surface-subtle text-[var(--muted-foreground)] shrink-0">' + escapeHtml(item.tag) + '</span>' +
+          '</label>';
+        }).join('');
+
+        return '<section class="space-y-2.5">' +
+          '<h3 class="text-sm font-bold flex items-center gap-2">' +
+            '<span class="w-2.5 h-2.5 rounded-full bg-[var(--' + group.color + ')]"></span>' +
+            escapeHtml(group.phase) +
+          '</h3>' +
+          '<div class="space-y-2">' + itemsHtml + '</div>' +
+        '</section>';
+      }).join('');
+
+      var customHtml = '';
+      if (state.customPrepItems.length > 0) {
+        customHtml = '<section class="space-y-2.5">' +
+          '<h3 class="text-sm font-bold">✨ 我的自定义补充事项</h3>' +
+          '<div class="space-y-2">' +
+            state.customPrepItems.map(function (item) {
+              var isChecked = !!state.checkedPrep[item.id];
+              return '<div class="flex items-center gap-3 p-3.5 rounded-xl bg-[var(--card)] border border-[var(--card-border)]">' +
+                '<input type="checkbox" ' + (isChecked ? 'checked' : '') + ' onchange="togglePrepItem(\'' + item.id + '\')" class="w-4 h-4 accent-[var(--primary)] shrink-0 cursor-pointer" />' +
+                '<span class="flex-1 text-xs ' + (isChecked ? 'line-through text-[var(--muted-foreground)]' : '') + '">' + escapeHtml(item.text) + '</span>' +
+                '<button onclick="removeCustomPrep(\'' + item.id + '\')" class="text-xs text-[var(--muted-foreground)] hover:text-[var(--error)] cursor-pointer">删除</button>' +
+              '</div>';
+            }).join('') +
+          '</div>' +
+        '</section>';
+      }
+
+      return '<div class="space-y-6 fade-in">' +
+        // Progress Card
+        '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5">' +
+          '<div class="flex flex-wrap items-center justify-between gap-3 mb-3">' +
+            '<div>' +
+              '<h2 class="text-lg font-bold">行前倒计时准备清单（2027年9月出发）</h2>' +
+              '<p class="text-xs text-[var(--muted-foreground)] mt-0.5">按时间节点分步完成，所有勾选进度都会自动保存！</p>' +
+            '</div>' +
+            '<div class="text-right">' +
+              '<span class="text-2xl font-bold font-mono text-[var(--primary)]">' + pct + '%</span>' +
+              '<span class="text-xs text-[var(--muted-foreground)] block">' + done + ' / ' + total + ' 已完成</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="w-full h-2.5 rounded-full surface-subtle overflow-hidden border border-[var(--card-border)]">' +
+            '<div class="h-full bg-[var(--primary)] progress-bar-fill rounded-full" style="width: ' + pct + '%;"></div>' +
+          '</div>' +
+
+          // Add custom item form
+          '<form onsubmit="addCustomPrep(event)" class="flex gap-2 mt-4">' +
+            '<input id="custom-prep-input" type="text" placeholder="添加你自己的待办（例如：买漂亮连衣裙、换驾照翻译件备用...）" class="flex-1 px-3.5 py-2 rounded-xl surface-subtle border border-[var(--card-border)] text-xs text-[var(--foreground)] focus:outline-none focus:border-[var(--primary)]" />' +
+            '<button type="submit" class="px-4 py-2 rounded-xl bg-[var(--primary)] text-[var(--primary-foreground)] text-xs font-medium cursor-pointer shrink-0">+ 添加待办</button>' +
+          '</form>' +
+        '</section>' +
+
+        // Useful Apps Bar
+        '<section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4">' +
+          '<div class="text-xs font-bold mb-2.5">📱 出发前必装 7 大实用 App</div>' +
+          '<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 text-xs text-center">' +
+            '<div class="surface-subtle rounded-xl p-2.5 border border-[var(--card-border)]"><div class="font-semibold">Google Maps</div><div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">导航&查餐厅</div></div>' +
+            '<div class="surface-subtle rounded-xl p-2.5 border border-[var(--card-border)]"><div class="font-semibold">Uber / DiDi</div><div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">机场&夜归打车</div></div>' +
+            '<div class="surface-subtle rounded-xl p-2.5 border border-[var(--card-border)]"><div class="font-semibold">TripView</div><div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">悉尼实时公交</div></div>' +
+            '<div class="surface-subtle rounded-xl p-2.5 border border-[var(--card-border)]"><div class="font-semibold">PTV</div><div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">墨尔本电车火车</div></div>' +
+            '<div class="surface-subtle rounded-xl p-2.5 border border-[var(--card-border)]"><div class="font-semibold">My TRS Claim</div><div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">机场退税二维码</div></div>' +
+            '<div class="surface-subtle rounded-xl p-2.5 border border-[var(--card-border)]"><div class="font-semibold">OpenTable</div><div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">热门餐厅预约</div></div>' +
+            '<div class="surface-subtle rounded-xl p-2.5 border border-[var(--card-border)]"><div class="font-semibold">Splitwise</div><div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">闺蜜AA自动记账</div></div>' +
+          '</div>' +
+        '</section>' +
+
+        '<div class="space-y-6">' + groupsHtml + customHtml + '</div>' +
+      '</div>';
+    }
+
+    // =========================================================================
+    // Interactive Event Handlers
+    // =========================================================================
+    function renderCurrentTab() {
+      var container = document.getElementById('app-content');
+      if (state.activeTab === 'overview') container.innerHTML = renderOverview();
+      else if (state.activeTab === 'itinerary') container.innerHTML = renderItinerary();
+      else if (state.activeTab === 'hotels') container.innerHTML = renderHotels();
+      else if (state.activeTab === 'musicals') container.innerHTML = renderMusicals();
+      else if (state.activeTab === 'foodshop') container.innerHTML = renderFoodShop();
+      else if (state.activeTab === 'safety') container.innerHTML = renderSafety();
+      else if (state.activeTab === 'checklist') container.innerHTML = renderChecklist();
+    }
+
+    function selectDay(dayNum) {
+      state.selectedDay = dayNum;
+      saveState();
+      renderCurrentTab();
+    }
+
+    function setDay7Mode(mode) {
+      state.day7Mode = mode;
+      saveState();
+      renderCurrentTab();
+    }
+
+    function toggleSpotDone(id) {
+      state.doneSpots[id] = !state.doneSpots[id];
+      saveState();
+      renderCurrentTab();
+    }
+
+    function updateDayNote(dayNum, val) {
+      state.dayNotes[dayNum] = val;
+      saveState();
+    }
+
+    function setHotelCity(city) {
+      state.hotelCity = city;
+      saveState();
+      renderCurrentTab();
+    }
+
+    function updateHotelNote(city, val) {
+      state.selectedHotelNote[city] = val;
+      saveState();
+    }
+
+    function setMusicalCity(city) {
+      state.musicalCity = city;
+      saveState();
+      renderCurrentTab();
+    }
+
+    function setFoodSubTab(sub) {
+      state.foodSubTab = sub;
+      saveState();
+      renderCurrentTab();
+    }
+
+    function toggleFoodLike(id) {
+      state.wishlistFood[id] = !state.wishlistFood[id];
+      saveState();
+      renderCurrentTab();
+    }
+
+    function toggleShoppingItem(id) {
+      state.shoppingChecked[id] = !state.shoppingChecked[id];
+      saveState();
+      renderCurrentTab();
+    }
+
+    function togglePrepItem(id) {
+      state.checkedPrep[id] = !state.checkedPrep[id];
+      saveState();
+      renderCurrentTab();
+    }
+
+    function addCustomPrep(e) {
+      e.preventDefault();
+      var input = document.getElementById('custom-prep-input');
+      var val = (input.value || '').trim();
+      if (!val) return;
+      state.customPrepItems.push({ id: 'cp_' + Date.now(), text: val });
+      input.value = '';
+      saveState();
+      renderCurrentTab();
+    }
+
+    function removeCustomPrep(id) {
+      state.customPrepItems = state.customPrepItems.filter(function (i) { return i.id !== id; });
+      delete state.checkedPrep[id];
+      saveState();
+      renderCurrentTab();
+    }
+
+    // Export Modal Logic
+    function buildSummaryText() {
+      var lines = [];
+      lines.push('🇦🇺 澳洲九日初遇 · 墨尔本 × 十二门徒 × 悉尼（2027.09.10 - 09.19）');
+      lines.push('👭 两位女生轻松游 · 全程仅换 1 次酒店（墨尔本 3 晚 + 悉尼 5 晚）');
+      lines.push('');
+      lines.push('✈️ 航班汇合：');
+      lines.push('• 9/10 重庆(11:45 CZ3466) / 上海(13:30 CZ6752) → 深圳 T3 汇合 → 同飞 CZ3071 (18:55-06:25+1) 抵达悉尼');
+      lines.push('• 需另订内陆段：9/11 上午 SYD→MEL (10:30左右)；9/14 下午 MEL→SYD (16:30左右)');
+      lines.push('• 9/19 悉尼 10:05 同飞 CZ326 → 广州白云 T2 (18:10) → 各自飞回重庆(20:20)/上海(20:00)');
+      lines.push('');
+      lines.push('🏨 推荐住宿区域：');
+      lines.push('• 墨尔本 (3晚)：Flinders St / Collins St (CBD免费电车区) 或 Southern Cross 东侧');
+      if (state.selectedHotelNote.melbourne) lines.push('  ↳ 备选记录：' + state.selectedHotelNote.melbourne);
+      lines.push('• 悉尼 (5晚)：Town Hall / QVB / Hyde Park 西侧（购物+机场线无敌）或 Circular Quay');
+      if (state.selectedHotelNote.sydney) lines.push('  ↳ 备选记录：' + state.selectedHotelNote.sydney);
+      lines.push('');
+      lines.push('📅 每日核心安排：');
+      DAYS_DATA.forEach(function (d) {
+        var extra = d.hasPlanToggle ? (' [' + d[state.day7Mode].label + ']') : '';
+        lines.push('Day ' + d.day + ' (' + d.date + ' · ' + d.city + ')：' + d.title + extra);
+        if (state.dayNotes[d.day]) lines.push('  📝 备忘：' + state.dayNotes[d.day]);
+      });
+      lines.push('');
+      lines.push('🎭 2027年9月音乐剧必蹲清单（《汉密尔顿》2027暂无澳巡）：');
+      lines.push('• 悉尼：《帕丁顿熊音乐剧》澳洲首演 (Capitol Theatre) / 《悲惨世界》40周年全本 (悉尼歌剧院)');
+      lines.push('• 墨尔本：《返老还童》9/3-10/2 (Arts Centre) / 《肉馅行动》9月澳洲首演 (Comedy Theatre)');
+
+      var likedFoods = FOOD_DATA.filter(function (f) { return state.wishlistFood[f.id]; });
+      if (likedFoods.length > 0) {
+        lines.push('');
+        lines.push('🍽️ 已收藏想吃清单：');
+        likedFoods.forEach(function (f) {
+          lines.push('• [' + f.city + '] ' + f.name + '（' + f.dish + '）');
+        });
+      }
+      return lines.join('\n');
+    }
+
+    function openSummaryModal() {
+      var modal = document.getElementById('summary-modal');
+      document.getElementById('summary-textarea').value = buildSummaryText();
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeSummaryModal() {
+      var modal = document.getElementById('summary-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function copySummaryText() {
+      var ta = document.getElementById('summary-textarea');
+      ta.select();
+      try {
+        navigator.clipboard.writeText(ta.value);
+      } catch (e) {
+        document.execCommand('copy');
+      }
+      var fb = document.getElementById('copy-feedback');
+      fb.style.opacity = '1';
+      setTimeout(function () { fb.style.opacity = '0'; }, 2200);
+    }
+
+    // Boot
+    renderNav();
+    updateHeaderProgress();
+    renderCurrentTab();
+  </script>
+</body>
+</html>
